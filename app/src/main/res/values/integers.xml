@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="red_packet_close_anim_duration">500</integer>
+    <integer name="red_packet_open_anim_duration">1000</integer>
+    <string name="hb_ccy">¥&#160;</string>
+
+</resources>

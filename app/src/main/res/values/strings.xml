@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RedPacket</string>
+    <string name="congratulate_acquire">恭喜您获得！</string>
+    <string name="f_receive_hb_account">款项将汇到您尾号%s的账户</string>
+</resources>

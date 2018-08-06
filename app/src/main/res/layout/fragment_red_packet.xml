@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_red_banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp">
+
+        <TextView
+            android:id="@+id/tv_receive_hb"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/fl_hb_shake"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="70dp"
+            android:background="@drawable/ic_hb_banner_bg"
+            android:gravity="center_vertical"
+            android:text="摇一摇或点击抽奖"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <FrameLayout
+            android:id="@+id/fl_hb_shake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true">
+
+            <ImageView
+                android:id="@+id/iv_hb_shake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:src="@drawable/ic_hb_shake" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:src="@drawable/ic_hb_banner_bg2" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

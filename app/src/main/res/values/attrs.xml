@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RollNumView">
+        <attr name="numValue" format="string" />
+        <attr name="numTextColor" format="color" />
+        <attr name="numTextSize" format="dimension" />
+        <attr name="rollDuration" format="float"/>
+        <attr name="rollRepeatCount" format="integer"/>
+    </declare-styleable>
+</resources>

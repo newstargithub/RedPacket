@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <objectAnimator
+        android:duration="@integer/red_packet_open_anim_duration"
+        android:propertyName="translationY"
+        android:valueType="floatType"
+        android:valueFrom="0"
+        android:valueTo="266"/>
+
+</set>

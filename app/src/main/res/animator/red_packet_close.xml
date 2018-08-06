@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <objectAnimator
+        android:duration="@integer/red_packet_close_anim_duration"
+        android:propertyName="rotationX"
+        android:valueFrom="60"
+        android:valueTo="0"/>
+</set>
