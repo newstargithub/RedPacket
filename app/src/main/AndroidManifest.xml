@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.halo.redpacket">
 
+    <!--震动权限-->
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.hardware.sensor.accelerometer"/>
 
