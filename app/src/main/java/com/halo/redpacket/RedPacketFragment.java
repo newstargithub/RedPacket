@@ -228,7 +228,7 @@ public class RedPacketFragment extends Fragment implements SensorEventListener{
         //播放摇一摇音乐
         RedpacketHelper.playShakeSound(getContext());
         //震动
-        RedpacketHelper.vibrite(getContext(), 300);
+        RedpacketHelper.vibrate(getContext(), 300);
         onClickRedPacketBanner();
     }
 

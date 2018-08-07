@@ -36,7 +36,7 @@ public class RedpacketHelper {
      * @param context
      * @param milliseconds
      */
-    public static void vibrite(Context context, long milliseconds) {
+    public static void vibrate(Context context, long milliseconds) {
         Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
         vibrator.vibrate(milliseconds);
     }
