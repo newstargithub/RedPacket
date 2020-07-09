@@ -32,7 +32,7 @@ public class RedPacketFragment extends Fragment implements SensorEventListener{
     private static final String TAG = RedPacketFragment.class.getSimpleName();
     private SensorManager mSensorManager;
     private Sensor mAcceleration;
-    private long lastUpateTime;
+    private long lastUpdateTime;
     private float lastX, lastY, lastZ;
     private TextView tvRedPacket;
     private View ivShake;
@@ -184,11 +184,11 @@ public class RedPacketFragment extends Fragment implements SensorEventListener{
         if (type == Sensor.TYPE_ACCELEROMETER) {
             //摇一摇算法加强
             long currentTimeMillis = System.currentTimeMillis();
-            long timeInterval = currentTimeMillis - lastUpateTime;
+            long timeInterval = currentTimeMillis - lastUpdateTime;
             if (timeInterval < UPDATE_INTERVAL_TIME) {
                 return;
             }
-            lastUpateTime = currentTimeMillis;
+            lastUpdateTime = currentTimeMillis;
             float aux = event.values[0];
             float auy = event.values[1];
             float auz = event.values[2];
