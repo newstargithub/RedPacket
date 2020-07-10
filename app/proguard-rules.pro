@@ -15,3 +15,10 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+
+#通过ProGuard在打包阶段清除某些Log日志，打印代码
+-assumenosideeffects class andoird.util.Log {
+    public static *** d(...);
+}
+
