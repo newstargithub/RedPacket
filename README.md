@@ -68,8 +68,25 @@ WeakReference可以传入ReferenceQueue，当对象被回收，会把WeakReferen
 经过上面三步还保留在Set中的就是应当被GC回收，但是发生泄漏的对象。
 
 ###########
+屏幕适配
+1.ConstraintLayout，它的前身是 PercentLayout(百分比布局)，
+Bias，ConstraintLayout 提供了水平和垂直方向的 bias 属性，这个属性的取值范围是 0~1。主要作用是确立 View 在水平方向或者垂直方向的位置百分比。
+weight，实现将多个 UI 控件按照某一方向进行排列，并且设置一定的权重规则。
+2.多 dimens 基于 dp 的适配方案
+可以在 res 文件夹中创建多套 values 文件夹， values- 后的 sw 指的是 smallest width，也就是最小宽度。
+Android 系统在运行时会自动识别屏幕可用的最小宽度，然后根据识别的结果去资源文件中查找相对应的资源文件中的属性值。
+3.文字 TextView
+对于 TextView 的宽高，建议尽量使用 wrap_content 自适应，因为一旦使用具体值进行限定，我们无法保证它不会在某些手机上被 cut 掉。
+4.图片ImageView
+对于 ImageView 不建议统一使用 wrap_content，因为有时我们的图片是从服务器上下载到本地显示的，图片的宽高并不一定是完全相等的，这样会造成图片的显示大小不一致，这种情况我们一般是将 ImageView 的宽高设置为某一固定 dp 值。
+还有另外一种做法就是在 Java 代码中动态设置 ImageView 的大小。
 
-
+###########
+面对 UI 卡顿，如何入手分析解决
+首先我们了解了 CPU 和 GPU 是如何协同工作，将 View 绘制的数据保存在缓存 Buffer 中；
+然后为了解决 Buffer 的读取并发问题，Android 引入了双缓冲机制；
+但是双缓冲机制也并不是完美的，因为软件层刷新是随机的，为此 Android 又引入了 vsync 机制，vsync 机制的实现主要依赖 Choreographer 来实现。
+了解了这整个过程之后，再通过 Systrace 日志，就可以分析出具体是哪一部分耗费性能较高，并针对性地做出优化。
 
 
 
