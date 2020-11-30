@@ -1,5 +1,7 @@
 package com.halo.redpacket.util
 
+import java.io.Serializable
+
 data class Person(var name:String, var password: String)
 
 /**
@@ -57,7 +59,5 @@ tailrec fun sumWithTailrec(n: Int, result: Int): Int  = if (n <= 0) result else 
  */
 tailrec fun factorialWithTailrec(n: Int, result: Int): Int = if (n == 1) result else factorialWithTailrec(n-1, result * n)
 
-class KtDemo {
 
 
-}
