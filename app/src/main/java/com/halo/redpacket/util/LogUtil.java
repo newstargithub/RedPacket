@@ -31,11 +31,13 @@ import javax.xml.transform.stream.StreamSource;
 public class LogUtil {
     private static final int V = 1;
     private static final String LINE_SEP = "\n";
+    //日志开关
     private static boolean sLogSwitch = true;
     //日志是否打印到控制台开关
     private static boolean sLog2Console = true;
     //日志是否写入到文件开关
     private static boolean sLog2File = false;
+
     private static ExecutorService sExecutor;
     private static String fullPath = "log";
     private static String mTag;
@@ -47,7 +49,7 @@ public class LogUtil {
     }
 
     public static void d(String tag, String msg) {
-        if (sLogSwitch) {
+        if (sLogSwitch && sConsoleFilter >= Log.DEBUG) {
             Log.d(tag, msg);
         }
     }
@@ -59,13 +61,14 @@ public class LogUtil {
         if (sLog2Console) {
             print2Console(tag, msg);
         }
-        if (sLog2File) {
+        if (sLog2File && sFileFilter >= Log.DEBUG) {
             print2File(tag, msg);
         }
     }
 
     private static void print2File(final String tag, final String msg) {
         if (sExecutor == null) {
+            //单线程池
             sExecutor = Executors.newSingleThreadExecutor();
         }
         final String content = "tag\nmsg";
