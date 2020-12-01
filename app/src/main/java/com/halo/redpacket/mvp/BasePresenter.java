@@ -1,7 +1,7 @@
 package com.halo.redpacket.mvp;
 
-import android.arch.lifecycle.LifecycleOwner;
-import android.support.annotation.NonNull;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.annotation.NonNull;
 
 /**
  * Author: zx

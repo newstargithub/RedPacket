@@ -1,7 +1,7 @@
 package com.halo.redpacket;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,7 +10,6 @@ import android.widget.ListView;
 
 import com.halo.redpacket.activity.PieImageActivity;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

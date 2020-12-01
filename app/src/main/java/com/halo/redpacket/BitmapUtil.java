@@ -7,8 +7,8 @@ import android.graphics.BitmapFactory;
 import android.graphics.BitmapRegionDecoder;
 import android.graphics.Rect;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.v4.util.LruCache;
+import androidx.annotation.RequiresApi;
+import androidx.collection.LruCache;
 
 import java.io.IOException;
 import java.io.InputStream;

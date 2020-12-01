@@ -1,12 +1,8 @@
 package com.halo.redpacket;
 
-import android.arch.lifecycle.GenericLifecycleObserver;
-import android.arch.lifecycle.Lifecycle;
-import android.arch.lifecycle.LifecycleOwner;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.halo.redpacket.mvp.BasePresenter;
 
@@ -23,15 +19,9 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.fl_container, fragment).commit();
 
-        getLifecycle().addObserver(new GenericLifecycleObserver() {
-
-            @Override
-            public void onStateChanged(LifecycleOwner source, Lifecycle.Event event) {
-                Log.d(TAG, "onStateChanged: event =" + event);
-            }
-        });
 
         mPresenter = new BasePresenter();
         getLifecycle().addObserver(mPresenter);
+
     }
 }

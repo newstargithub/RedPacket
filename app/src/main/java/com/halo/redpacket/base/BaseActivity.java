@@ -1,7 +1,7 @@
 package com.halo.redpacket.base;
 
 import android.Manifest;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import com.halo.redpacket.util.PermissionUtil;

@@ -2,8 +2,8 @@ package com.halo.redpacket.skin;
 
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v4.view.LayoutInflaterCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.view.LayoutInflaterCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import com.halo.redpacket.R;
