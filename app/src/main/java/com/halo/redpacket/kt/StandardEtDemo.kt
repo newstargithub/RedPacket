@@ -79,8 +79,8 @@ fun <T : View> T.click1(block: (T) -> Unit) = setOnClickListener { block(it as T
  * @param delay Long 延迟时间，默认600毫秒
  * @return T
  */
-fun <T : View> T.withTrigger(delay: Int = 600): T {
-    delayTrigger = delay
+fun <T : View> T.withTrigger(delay: Long = 600): T {
+    triggerDelay = delay
     return this
 }
 
@@ -110,14 +110,26 @@ fun <T : View> T.clickWithTrigger(delay: Long, block: (T) -> Unit) = setOnClickL
     }
 }
 
+/**
+ * 上次触发时间
+ */
 private var <T : View> T.triggerLastTime : Long
     get() = if (getTag(1123460103) != null) getTag(1123460103) as Long else 0
     set(value) = setTag(1123460103, value)
 
+/**
+ * 触发延迟时间
+ */
 private var <T : View> T.triggerDelay : Long
     get() = if (getTag(1123461123) != null) getTag(1123461123) as Long else 0
     set(value) = setTag(1123461123, value)
 
-private fun clickEnable(): Boolean {
-
+private fun <T : View> T.clickEnable(): Boolean {
+    var flag = false
+    val currentTimeMillis = System.currentTimeMillis()
+    if (currentTimeMillis > triggerLastTime + triggerDelay) {
+        flag = true
+        triggerLastTime = currentTimeMillis
+    }
+    return flag
 }

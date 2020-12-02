@@ -1,6 +1,6 @@
 package com.halo.redpacket.mvvm
 
-import androidx.lifecycle.ViewModel
+import android.arch.lifecycle.ViewModel
 import com.halo.redpacket.kt.HttpResponse
 import io.reactivex.Observable
 

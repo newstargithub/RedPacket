@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+/**
+ * Kotlin Android Extensions 是 Kotlin 团队开发的一个著名的插件，
+ * 使用它可以简化代码，对于 UI 绑定无需再使用 findViewById 或者 butterknife。
+ */
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
