@@ -1,6 +1,10 @@
 package com.halo.redpacket.util
 
+import io.reactivex.MaybeTransformer
 import io.reactivex.ObservableTransformer
+import io.reactivex.Scheduler
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
 
 class RxJavaUtils {
@@ -18,6 +22,17 @@ class RxJavaUtils {
         fun <T> preventDuplicateClickTransformer(windowDuration: Long = 1000, unit: TimeUnit = TimeUnit.SECONDS): ObservableTransformer<T, T> {
             return ObservableTransformer{
                 it.throttleWithTimeout(windowDuration, unit)
+            }
+        }
+
+        /**
+         * 一个工具方法用于切换线程。网络请求时使用io线程，请求成功之后切换回主线程方便进行UI的更新。
+         */
+        @JvmStatic
+        fun <T> maybeToMain(): MaybeTransformer<T, T> {
+            return MaybeTransformer { upstream ->
+                upstream.subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
             }
         }
     }

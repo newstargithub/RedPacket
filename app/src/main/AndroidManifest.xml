@@ -3,15 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.halo.redpacket">
     <!-- 震动权限 -->
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <!-- 加速传感器权限 -->
-    <uses-permission android:name="android.hardware.sensor.accelerometer" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -19,7 +10,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".PmActivity"></activity>
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,8 +20,15 @@
         </activity>
         <activity android:name=".activity.PieImageActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".skin.SkinActivity"/>
+        <activity android:name=".skin.SkinActivity" />
         <activity android:name=".activity.CrashDisplayActivity" />
-    </application>
+    </application> <!-- 加速传感器权限 -->
+    <uses-permission android:name="android.hardware.sensor.accelerometer" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
 
 </manifest>

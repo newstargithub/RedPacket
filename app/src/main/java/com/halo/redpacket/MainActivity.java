@@ -4,7 +4,9 @@ import android.os.Bundle;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.halo.redpacket.model.RetrofitManager;
 import com.halo.redpacket.mvp.BasePresenter;
+import com.halo.redpacket.util.RxJavaUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,5 +25,19 @@ public class MainActivity extends AppCompatActivity {
         mPresenter = new BasePresenter();
         getLifecycle().addObserver(mPresenter);
 
+        getPublishEvent();
+    }
+
+    /**
+     * 获取在 github 上的公共事件。
+     */
+    private void getPublishEvent() {
+        RetrofitManager.get()
+                .apiService()
+                .publishEvent("fengzhizi715")
+                //RxLifecycle 可以防止内存泄漏，当然除了使用它之外还有多种方式。
+                .compose(RxLifecycle.bind(this).toLifecycleTransformer())
+                .compose(RxJavaUtils.maybeToMain())
+                .subscribe();
     }
 }
