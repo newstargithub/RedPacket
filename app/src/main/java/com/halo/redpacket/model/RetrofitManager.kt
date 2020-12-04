@@ -3,6 +3,8 @@ package com.halo.redpacket.model
 import com.halo.redpacket.model.api.ADService
 import com.halo.redpacket.model.api.APIService
 import com.halo.redpacket.model.api.PmApiService
+import com.halo.redpacket.model.interceptor.AndroidLoggingInterceptor
+import com.halo.redpacket.model.interceptor.LoggingInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -16,13 +18,7 @@ class RetrofitManager private constructor(){
     private val okhttpClient: OkHttpClient
 
     init {
-        val logInterceptor = LoggingInterceptor.Builder()
-                .loggable(true) // TODO: 发布到生产环境需要改成false
-                .request()
-                .requestTag("Request")
-                .response()
-                .responseTag("Response")
-                .build()
+        val logInterceptor = AndroidLoggingInterceptor.build(hideVerticalLine = true)
 
         //对 OkHttp 进行配置
         val builder = OkHttpClient.Builder()

@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 .apiService()
                 .publishEvent("fengzhizi715")
                 //RxLifecycle 可以防止内存泄漏，当然除了使用它之外还有多种方式。
-                .compose(RxLifecycle.bind(this).toLifecycleTransformer())
+//                .compose(RxLifecycle.bind(this).toLifecycleTransformer())
                 .compose(RxJavaUtils.maybeToMain())
                 .subscribe();
     }

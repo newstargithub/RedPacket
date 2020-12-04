@@ -1,5 +1,6 @@
 package com.halo.redpacket.util
 
+import io.reactivex.FlowableTransformer
 import io.reactivex.MaybeTransformer
 import io.reactivex.ObservableTransformer
 import io.reactivex.Scheduler
@@ -26,6 +27,32 @@ class RxJavaUtils {
         }
 
         /**
+         * 切换到主线程
+         *  Transformer，是转换器的意思。Transformer 能够将一个 Observable/Flowable/Single/Completable/Maybe
+         *  对象转换成另一个 Observable/Flowable/Single/Completable/Maybe 对象。
+         *
+         *  为啥这样Transformer
+         *  RxJava 提倡链式调用，compose 操作符和 Transformer 组合使用能够防止链式被打破。
+         */
+        @JvmStatic
+        fun <T> observableToMain():ObservableTransformer<T, T> {
+            return ObservableTransformer{
+                upstream ->
+                upstream.subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+            }
+        }
+
+        @JvmStatic
+        fun <T> flowableToMain(): FlowableTransformer<T, T> {
+            return FlowableTransformer{
+                upstream ->
+                upstream.subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+            }
+        }
+
+        /**
          * 一个工具方法用于切换线程。网络请求时使用io线程，请求成功之后切换回主线程方便进行UI的更新。
          */
         @JvmStatic
@@ -33,6 +60,19 @@ class RxJavaUtils {
             return MaybeTransformer { upstream ->
                 upstream.subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
+            }
+        }
+
+        /**
+         * 针对key做缓存
+         */
+        @JvmStatic
+        fun <T> toCacheTransformer(key: String): MaybeTransformer<T, T> {
+            return MaybeTransformer { upstream ->
+                upstream.map { t ->
+//                    CacheManager.getInstance().put(key, t as Serializable) //做缓存
+                    return@map t
+                }
             }
         }
     }

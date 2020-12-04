@@ -1,7 +1,12 @@
 package com.halo.redpacket
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.halo.redpacket.inject.DaggerDemoComponent
+import com.halo.redpacket.inject.DaggerUserComponent2
+import com.halo.redpacket.inject.IService
+import com.halo.redpacket.inject.UserInject
 import com.halo.redpacket.model.Preconditions
 import com.halo.redpacket.model.RetrofitManager
 import com.halo.redpacket.model.bean.PM25Model
@@ -12,13 +17,29 @@ import com.halo.redpacket.util.RxJavaUtils
 import io.reactivex.Maybe
 import io.reactivex.functions.BiFunction
 import kotlinx.android.synthetic.main.activity_pm.*
+import javax.inject.Inject
 
 class PmActivity : AppCompatActivity() {
+
+    @Inject
+    lateinit var user: UserInject
+
+    @Inject
+    lateinit var service: IService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pm)
         initData()
+
+        DaggerUserComponent2.create().inject(this)
+        button.setOnClickListener {
+//          DaggerUserComponent2.builder().build().inject(this)
+            Toast.makeText(this, user.testModule(), Toast.LENGTH_LONG).show()
+        }
+        button2.setOnClickListener {
+            Toast.makeText(this, service.foo(), Toast.LENGTH_LONG).show()
+        }
     }
 
     private fun initData() {
@@ -54,7 +75,7 @@ class PmActivity : AppCompatActivity() {
                 }.onErrorReturnItem(SO2Model())
 
         // 合并多个网络请求
-        Maybe.zip(pm25Maybe, so2Maybe, BiFunction<PM25Model, SO2Model, ZipObject>{ pm25Model, so2Model->
+        val subscribe = Maybe.zip(pm25Maybe, so2Maybe, BiFunction<PM25Model, SO2Model, ZipObject> { pm25Model, so2Model ->
             return@BiFunction ZipObject(pm25Model.quality,
                     pm25Model.pm2_5,
                     pm25Model.pm2_5_24h,
