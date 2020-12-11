@@ -1,7 +1,6 @@
 package com.halo.redpacket.model.interceptor
 
 import com.halo.redpacket.model.bean.GlobalNetworkException
-import com.halo.redpacket.util.LogUtil
 import com.halo.redpacket.util.RxBus
 import okhttp3.Interceptor
 import okhttp3.Response

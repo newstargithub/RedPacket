@@ -2,7 +2,7 @@ package com.halo.redpacket.util;
 
 import android.content.Context;
 
-import com.halo.redpacket.MyApplication;
+import com.halo.redpacket.App;
 import com.halo.redpacket.okhttp.ProgressListener;
 import com.halo.redpacket.okhttp.ProgressResponseBody;
 import com.squareup.picasso.OkHttp3Downloader;
@@ -25,7 +25,7 @@ public class SquareUtils {
      * @return
      */
     public static synchronized OkHttpClient getClient() {
-        File cacheDir = MyApplication.getInstance().getExternalCacheDir();
+        File cacheDir = App.getInstance().getExternalCacheDir();
         if (client == null) {
             client = new OkHttpClient.Builder()
                     //Interceptor -> cache -> NetworkInterceptor

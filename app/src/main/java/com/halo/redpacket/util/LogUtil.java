@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.halo.redpacket.BuildConfig;
-import com.halo.redpacket.MyApplication;
+import com.halo.redpacket.App;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -182,7 +182,7 @@ public class LogUtil {
         sLogSwitch = config.mLogSwitch;
         sLog2Console = config.mConsoleSwitch;
         sLog2File = config.mLogFileSwitch;
-        String path = MyApplication.getInstance().getCacheDir().getAbsolutePath() + File.separator +  "log";
+        String path = App.getInstance().getCacheDir().getAbsolutePath() + File.separator +  "log";
         fullPath = TextUtils.isEmpty(config.mDir) ? path : config.mDir;
         sConsoleFilter = config.mConsoleFilter;
         sFileFilter = config.mFileFilter;

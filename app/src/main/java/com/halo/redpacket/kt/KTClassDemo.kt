@@ -59,9 +59,9 @@ data class HttpResponse<T>(
         get() = code == 1
 }
 
-data class User(var username: String,
-                var password: String,
-                var address: Address
+data class User(var username: String? = null,
+                var password: String? = null,
+                var address: Address? = null
 )
 
 data class Address(var street: String)
