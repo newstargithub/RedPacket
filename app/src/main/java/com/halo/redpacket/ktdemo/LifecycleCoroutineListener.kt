@@ -1,10 +1,9 @@
-package com.halo.redpacket.kt
+package com.halo.redpacket.ktdemo
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.cancelAndJoin
 
 open class LifecycleCoroutineListener(private val job: Job,
                                       private val cancelEvent: Lifecycle.Event = Lifecycle.Event.ON_DESTROY)

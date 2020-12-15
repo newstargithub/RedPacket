@@ -1,5 +1,6 @@
 package com.halo.redpacket.mvvm
 
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.halo.redpacket.base.BaseActivity
 import com.halo.redpacket.base.BaseFragment
@@ -15,7 +16,7 @@ import kotlin.reflect.KProperty
  ...
  }
  */
-class ViewModelDelegate<out T : BaseViewModel>(private var clazz: KClass<T>, private var fromActivity: Boolean) {
+class ViewModelDelegate<out T : BaseViewModel>(private var clazz: KClass<T>, private var factory: ViewModelProvider.Factory?, private var fromActivity: Boolean) {
     private var viewModel: T? = null
 
     operator fun getValue(thisRef: BaseActivity, property: KProperty<*>) = buildViewModel(activity = thisRef)
@@ -31,9 +32,9 @@ class ViewModelDelegate<out T : BaseViewModel>(private var clazz: KClass<T>, pri
     private fun buildViewModel(activity: BaseActivity?= null, fragment: BaseFragment?= null): T {
         if (viewModel != null) return viewModel!!
         activity?.let {
-            viewModel = ViewModelProviders.of(it).get(clazz.java)
+            viewModel = ViewModelProviders.of(it, factory).get(clazz.java)
         } ?: fragment?.let {
-            viewModel = ViewModelProviders.of(it).get(clazz.java)
+            viewModel = ViewModelProviders.of(it, factory).get(clazz.java)
         } ?: throw IllegalStateException("Activity or Fragment is null! ")
         return viewModel!!
     }
@@ -42,6 +43,8 @@ class ViewModelDelegate<out T : BaseViewModel>(private var clazz: KClass<T>, pri
 /**
  * 扩展方法
  */
-fun <T : BaseViewModel> BaseActivity.viewModelDelegate(clazz: KClass<T>) = ViewModelDelegate<T>(clazz, true)
+fun <T : BaseViewModel> BaseActivity.viewModelDelegate(clazz: KClass<T>, factory: ViewModelProvider.Factory? = null)
+        = ViewModelDelegate<T>(clazz, factory,true)
 
-fun <T : BaseViewModel> BaseFragment.viewModelDelegate(clazz: KClass<T>, fromActivity: Boolean = true) = ViewModelDelegate<T>(clazz, fromActivity)
+fun <T : BaseViewModel> BaseFragment.viewModelDelegate(clazz: KClass<T>, factory: ViewModelProvider.Factory? = null, fromActivity: Boolean = true)
+        = ViewModelDelegate<T>(clazz, factory,fromActivity)

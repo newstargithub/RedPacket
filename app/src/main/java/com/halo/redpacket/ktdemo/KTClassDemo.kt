@@ -1,4 +1,4 @@
-package com.halo.redpacket.kt
+package com.halo.redpacket.ktdemo
 
 import android.view.View
 import com.google.gson.Gson

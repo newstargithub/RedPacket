@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.Transformations.map
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
+import kotlin.properties.Delegates
 
 class App : Application() {
     override fun onCreate() {
@@ -14,7 +15,7 @@ class App : Application() {
 
     companion object {
         @JvmStatic
-        var instance: App? = null
+        var instance: App by Delegates.notNull()
             private set
     }
 

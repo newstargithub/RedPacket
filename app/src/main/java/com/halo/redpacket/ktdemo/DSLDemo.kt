@@ -1,4 +1,4 @@
-package com.halo.redpacket.kt
+package com.halo.redpacket.ktdemo
 
 /**
  * 带接收者的函数类型

@@ -1,4 +1,4 @@
-package com.halo.redpacket.kt
+package com.halo.redpacket.ktdemo
 
 import io.reactivex.Observable
 

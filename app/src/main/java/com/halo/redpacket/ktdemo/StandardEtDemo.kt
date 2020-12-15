@@ -1,6 +1,5 @@
-package com.halo.redpacket.kt
+package com.halo.redpacket.ktdemo
 
-import android.app.usage.NetworkStatsManager
 import android.content.Context
 import android.net.ConnectivityManager
 import android.view.View

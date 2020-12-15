@@ -50,6 +50,12 @@ public class PermissionUtil {
         }
     }
 
+    /**
+     * 第一次申请权限
+     * @param context
+     * @param permission
+     * @param firstTime
+     */
     private static void firstTimeAsking(Activity context, String permission, boolean firstTime) {
         SharedPreferences sp = context.getSharedPreferences(MY_SP, Context.MODE_PRIVATE);
         sp.edit().putBoolean(permission, firstTime).apply();

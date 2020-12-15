@@ -1,6 +1,4 @@
-package com.halo.redpacket.util
-
-import java.io.Serializable
+package com.halo.redpacket.ktdemo
 
 data class Person(var name:String, var password: String)
 
@@ -32,11 +30,11 @@ fun printPerson(person: Person) {
 }
 
 fun main(args: Array<String>) {
-    val user1 = Person("tony","123456")
+    val user1 = Person("tony", "123456")
     println(validate(user1))
     printPerson(user1)
 
-    val user2 = Person("tom","")
+    val user2 = Person("tom", "")
     println(validate(user2))
 
 
@@ -52,12 +50,12 @@ fun main(args: Array<String>) {
 /**
  * 尾递归，对自然数求和
  */
-tailrec fun sumWithTailrec(n: Int, result: Int): Int  = if (n <= 0) result else sumWithTailrec(n-1, result + n)
+tailrec fun sumWithTailrec(n: Int, result: Int): Int  = if (n <= 0) result else sumWithTailrec(n - 1, result + n)
 
 /**
  * n!
  */
-tailrec fun factorialWithTailrec(n: Int, result: Int): Int = if (n == 1) result else factorialWithTailrec(n-1, result * n)
+tailrec fun factorialWithTailrec(n: Int, result: Int): Int = if (n == 1) result else factorialWithTailrec(n - 1, result * n)
 
 
 

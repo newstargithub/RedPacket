@@ -1,4 +1,4 @@
-package com.halo.redpacket.kt
+package com.halo.redpacket.ktdemo
 
 import android.content.Context
 import android.view.View
