@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.halo.redpacket.activity.PieImageActivity
 import com.halo.redpacket.inject.*
+import com.halo.redpacket.mvvm.LifeCycleListener
 import java.util.*
 import javax.inject.Inject
 
@@ -38,5 +39,8 @@ class HomeActivity : AppCompatActivity() {
         userModule3.param("userModule")
         DaggerUserComponent3.builder().userModule3(userModule3).build().inject(this)
         Toast.makeText(this, user.testInjectWithParam(), Toast.LENGTH_LONG).show()
+
+        //绑定 LifeCycleListener 对象
+        lifecycle.addObserver(LifeCycleListener())
     }
 }

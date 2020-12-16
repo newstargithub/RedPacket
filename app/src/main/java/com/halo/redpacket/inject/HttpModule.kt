@@ -6,6 +6,7 @@ import com.halo.redpacket.model.GsonStringNullAdapter
 import com.halo.redpacket.model.api.APIService
 import com.halo.redpacket.model.interceptor.LoggingInterceptor
 import com.halo.redpacket.model.interceptor.NetworkExceptionInterceptor
+import com.halo.redpacket.util.CertifyUtils
 import dagger.Module
 import dagger.Provides
 import io.reactivex.schedulers.Schedulers
@@ -13,7 +14,6 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import java.lang.StringBuilder
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 

@@ -7,4 +7,5 @@
     <string name="network_error">网络异常</string>
     <string name="something_went_wrong">未知系统繁忙</string>
     <string name="write_external_storage_permission_tips">需要外部存储权限</string>
+    <string name="current_version">当前版本</string>
 </resources>

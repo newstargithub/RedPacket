@@ -1,4 +1,4 @@
-package com.halo.redpacket.inject
+package com.halo.redpacket.util
 
 import android.content.Context
 import com.halo.redpacket.App
@@ -9,7 +9,6 @@ import java.security.cert.Certificate
 import java.security.cert.CertificateException
 import java.security.cert.CertificateFactory
 import java.security.cert.X509Certificate
-import java.util.stream.Stream
 import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManagerFactory
 import javax.net.ssl.X509TrustManager

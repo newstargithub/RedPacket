@@ -1,8 +1,14 @@
 package com.halo.redpacket.model.api
 
+import com.halo.redpacket.model.LoginParam
+import com.halo.redpacket.model.LoginResponse
 import com.halo.redpacket.model.bean.Event
+import com.halo.redpacket.model.bean.HttpResponse
+import com.halo.redpacket.model.bean.VersionResponse
 import io.reactivex.Maybe
+import io.reactivex.Observable
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface APIService {
@@ -18,4 +24,10 @@ interface APIService {
      */
     @GET("users/{username}/events/public")
     fun publishEvent(@Path("username") userName:String): Maybe<List<Event>>
+
+    @POST("users/login")
+    fun login(param: LoginParam): Observable<LoginResponse>
+
+    @GET("version")
+    fun getVersion(): Maybe<HttpResponse<VersionResponse>>
 }

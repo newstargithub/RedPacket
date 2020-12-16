@@ -179,11 +179,10 @@ fun Editor.putEncryptStringSet(key: String, values: Set<String>): Editor {
 }
 
 /**
- * encrypt function
+ * encrypt function 使用 AES 算法进行加密，以保障数据安全
  * @return cipherText base64
  */
 private fun encryptPreference(plainText: String): String {
-
     return EncryptUtils.getInstance().encrypt(plainText)
 }
 

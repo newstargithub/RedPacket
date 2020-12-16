@@ -1,9 +1,9 @@
-package com.halo.redpacket.mvvm
+package com.halo.redpacket.ui.about
 
 import android.os.Handler
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.halo.redpacket.mvvm.BaseViewModel
 
 /**
  * LiveData 一般会跟 ViewModel 配合使用。ViewModel 跟 View 层解耦，通常将 LiveData 对象作为 ViewModel 的属性。
@@ -17,7 +17,7 @@ import androidx.lifecycle.ViewModel
     ......
     })
  */
-class FruitViewModel : ViewModel(){
+class FruitViewModel : BaseViewModel(){
     private var fruitList: MutableLiveData<List<String>>? = null
     private var handler: Handler = Handler()
 

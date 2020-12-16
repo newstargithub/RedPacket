@@ -22,7 +22,7 @@ fun <T> Maybe<T>.errorReturn(defaultValue: T) : Maybe<T> {
 }
 
 /**
- * action 参数传递的是一个函数，专门用于处理异常。
+ * 这样无须在 onError 中处理异常，而且 errorReturn 还是一个高阶函数。action 参数传递的是一个函数，专门用于处理异常。
  */
 fun <T> Maybe<T>.errorReturn(defaultValue: T, action: (Throwable)-> Unit) : Maybe<T> {
     return this.onErrorReturn {
@@ -35,6 +35,6 @@ fun <T> Maybe<T>.errorReturn(defaultValue: T, action: (Throwable)-> Unit) : Mayb
  * 遇到错误时，能够提前捕获异常，并返回一个新的Maybe
  * 后面无须再做异常处理
  */
-fun <T> Maybe<T>.errorResumeNext(defaultValue: T) : Maybe<T> = this.onErrorResumeNext(Maybe.just(defaultValue))
+fun <T> Maybe<T>.errorResumeNext(defaultValue: T): Maybe<T> = this.onErrorResumeNext(Maybe.just(defaultValue))
 
 fun <T> Maybe<T>.errorResumeNext():Maybe<T> = this.onErrorResumeNext(Maybe.empty())

@@ -18,6 +18,7 @@ ext {
     def butterKnifeVersion = "8.1.0"
     def leakcanary = "1.5.1"
     def aspectVersion = "1.8.9"
+    def lifecycle = "2.0.0"
 
     dependencies = ["appcompat-v7"               : "com.android.support:appcompat-v7:${supportVersion}",
                     "design"                     : "com.android.support:design:${supportVersion}",
@@ -50,5 +51,8 @@ ext {
                     "leakcanary_debug"           : "com.squareup.leakcanary:leakcanary-android:${leakcanary}",
                     "leakcanary_release"         : "com.squareup.leakcanary:leakcanary-android-no-op:${leakcanary}",
                     "leakcanary_test"            : "com.squareup.leakcanary:leakcanary-android-no-op:${leakcanary}",
+
+                    "lifecycle_reactivestreams"  : "android.arch.lifecycle:reactivestreams:${lifecycle}",
+                    "lifecycle_extensions"       : "androidx.lifecycle:lifecycle-extensions:${lifecycle}",
     ]
 }

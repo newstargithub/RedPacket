@@ -56,8 +56,24 @@ class App : Application() {
 //        L.header(getHeader())       // 初始化日志框架的Header
     }
 
+    /**
+     * 对于文件下载，可以使用基于 RxJava 和 Kotlin 打造的下载库 RxDownload。它支持多线程下载和断点续传。
+     */
     private fun initRxDownload() {
-
+        /*DownloadConfig.Builder.create(this)
+                .enableAutoStart(true)              //自动开始下载
+                .setDefaultPath("custom download path")     //设置默认的下载地址
+                .useHeadMethod(true)    //使用http HEAD方法进行检查
+                .setMaxRange(10)       // 每个任务并发的线程数量
+                .setRangeDownloadSize(4*1000*1000) //每个线程下载的大小，单位字节
+                .setMaxMission(3)      // 同时下载的任务数量
+                .enableDb(true)                             //启用数据库
+                .setDbActor(CustomSqliteActor(this))        //自定义数据库
+                .enableService(true)                        //启用Service
+                .enableNotification(true)                   //启用Notification
+                .setNotificationFactory(NotificationFactoryImpl()) 	    //自定义通知
+                .setOkHttpClientFacotry(OkHttpClientFactoryImpl()) 	    //自定义OKHTTP
+                .addExtension(ApkInstallExtension::class.java)          //添加扩展*/
     }
 
     private fun initUmeng() {

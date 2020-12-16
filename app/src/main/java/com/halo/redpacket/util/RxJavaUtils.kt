@@ -5,9 +5,13 @@ import io.reactivex.MaybeTransformer
 import io.reactivex.ObservableTransformer
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
 
+/**
+ * 封装线程的切换
+ */
 class RxJavaUtils {
 
     companion object {
@@ -21,7 +25,7 @@ class RxJavaUtils {
         @JvmOverloads
         @JvmStatic
         fun <T> preventDuplicateClickTransformer(windowDuration: Long = 1000, unit: TimeUnit = TimeUnit.SECONDS): ObservableTransformer<T, T> {
-            return ObservableTransformer{
+            return ObservableTransformer {
                 it.throttleWithTimeout(windowDuration, unit)
             }
         }
@@ -33,11 +37,12 @@ class RxJavaUtils {
          *
          *  为啥这样Transformer
          *  RxJava 提倡链式调用，compose 操作符和 Transformer 组合使用能够防止链式被打破。
+         *  使用：
+         *  .compose(RxJavaUtils.flowableToMain())
          */
         @JvmStatic
-        fun <T> observableToMain():ObservableTransformer<T, T> {
-            return ObservableTransformer{
-                upstream ->
+        fun <T> observableToMain(): ObservableTransformer<T, T> {
+            return ObservableTransformer { upstream ->
                 upstream.subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
             }
@@ -45,8 +50,7 @@ class RxJavaUtils {
 
         @JvmStatic
         fun <T> flowableToMain(): FlowableTransformer<T, T> {
-            return FlowableTransformer{
-                upstream ->
+            return FlowableTransformer { upstream ->
                 upstream.subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
             }
@@ -77,4 +81,14 @@ class RxJavaUtils {
         }
     }
 
+}
+
+/**
+ * CompositeDisposable 的扩展函数 plusAssign 重载了运算符 +=，从而能够简化代码。
+ *
+ * RxBus 的使用，以及结合 compositeDisposable：
+compositeDisposable += RxBus.get().register(PaySuccessEvent::class.java) { getServices() }
+ */
+operator fun CompositeDisposable.plusAssign(disposable: CompositeDisposable) {
+    add(disposable)
 }
