@@ -16,11 +16,12 @@
 
     <TextView
         android:id="@+id/tv_version"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="tv_label_version"
+        app:layout_constraintStart_toEndOf="@id/tv_label_version"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:gravity="end"
         android:textSize="@dimen/sp_16"
         tools:text="v1.0.0"/>
 

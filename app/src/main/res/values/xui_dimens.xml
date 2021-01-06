@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="xui_alpha_pressed">0.5</dimen>
+    <dimen name="xui_alpha_disabled">0.5</dimen>
+
+    <dimen name="xui_dialog_radius_size_phone">7dp</dimen>
+    <dimen name="xui_dialog_loading_padding_size_phone">26dp</dimen>
+    <dimen name="xui_dialog_loading_min_size_phone">100dp</dimen>
+    <dimen name="xui_loading_view_size_phone">78dp</dimen>
+    <dimen name="xui_loading_view_width_phone">4dp</dimen>
+    <dimen name="xui_loading_margin_size_phone">6dp</dimen>
+    <dimen name="mini_loading_view_size_phone">20dp</dimen>
+
+    <dimen name="xui_dialog_mini_loading_padding_size_tablet_big">30dp</dimen>
+    <dimen name="xui_dialog_mini_loading_min_size_tablet_big">200dp</dimen>
+    <dimen name="xui_dialog_mini_loading_padding_size_tablet_small">25dp</dimen>
+    <dimen name="xui_dialog_mini_loading_min_size_tablet_small">140dp</dimen>
+    <dimen name="xui_dialog_mini_loading_padding_size_phone">18dp</dimen>
+    <dimen name="xui_dialog_mini_loading_min_size_phone">90dp</dimen>
+
+    <dimen name="xui_mini_loading_margin_size_tablet_big">25dp</dimen>
+    <dimen name="xui_mini_loading_margin_size_tablet_small">18dp</dimen>
+    <dimen name="xui_mini_loading_margin_size_phone">12dp</dimen>
+
+    <dimen name="xui_mini_loading_view_size_tablet_big">45dp</dimen>
+    <dimen name="xui_mini_loading_view_size_tablet_small">35dp</dimen>
+    <dimen name="xui_mini_loading_view_size_phone">25dp</dimen>
+
+    <dimen name="xui_loading_text_size_tablet_big">21sp</dimen>
+    <dimen name="xui_loading_text_size_tablet_small">16sp</dimen>
+    <dimen name="xui_loading_text_size_phone">12sp</dimen>
+
+    <!--**********************************************
+   *                  xui popup                    *
+   ***********************************************-->
+    <!--<dimen name="xui_popup_width_tablet_big">232dp</dimen>
+    <dimen name="xui_popup_width_tablet_small">174dp</dimen>-->
+    <dimen name="xui_popup_width_phone">133dp</dimen>
+
+    <!--<dimen name="xui_tip_popup_padding_top_tablet_big">12dp</dimen>
+    <dimen name="xui_tip_popup_padding_top_tablet_small">9dp</dimen>-->
+    <dimen name="xui_tip_popup_padding_top_phone">8dp</dimen>
+
+    <!--<dimen name="xui_tip_popup_padding_left_tablet_big">18dp</dimen>
+    <dimen name="xui_tip_popup_padding_left_tablet_small">15dp</dimen>-->
+    <dimen name="xui_tip_popup_padding_left_phone">12dp</dimen>
+
+    <!--全局样式-->
+    <dimen name="xui_config_content_spacing_horizontal_phone">12dp
+    </dimen> <!-- margin 和 padding 等使用的内容通用水平间距 -->
+
+    <!--*********************************************
+    *                  EditText                     *
+    **********************************************-->
+    <dimen name="xui_config_size_edittext_input_text_tablet_big">20sp</dimen>
+    <dimen name="xui_config_size_edittext_helper_text_tablet_big">12sp</dimen>
+    <dimen name="xui_config_size_edittext_components_spacing_tablet_big">10dp</dimen>
+    <dimen name="xui_config_size_edittext_left_padding_tablet_big">17dp</dimen>
+    <dimen name="xui_config_size_edittext_radius_tablet_big">5dp</dimen>
+    <dimen name="xui_config_size_edittext_height_tablet_big">40dp</dimen>
+
+    <dimen name="xui_config_size_edittext_input_text_tablet_small">15sp</dimen>
+    <dimen name="xui_config_size_edittext_helper_text_tablet_small">9sp</dimen>
+    <dimen name="xui_config_size_edittext_components_spacing_tablet_small">8dp</dimen>
+    <dimen name="xui_config_size_edittext_left_padding_tablet_small">13dp</dimen>
+    <dimen name="xui_config_size_edittext_radius_tablet_small">4dp</dimen>
+    <dimen name="xui_config_size_edittext_height_tablet_small">30dp</dimen>
+
+    <dimen name="xui_config_size_edittext_input_text_phone">13sp</dimen>
+    <dimen name="xui_config_size_edittext_helper_text_phone">8sp</dimen>
+    <dimen name="xui_config_size_edittext_components_spacing_phone">7dp</dimen>
+    <dimen name="xui_config_size_edittext_left_padding_phone">10dp</dimen>
+    <dimen name="xui_config_size_edittext_radius_phone">4dp</dimen>
+    <dimen name="xui_config_size_edittext_height_phone">30dp</dimen>
+
+    <!-- DropDownMenu-->
+    <dimen name="default_ddm_underline_height">1dp</dimen>
+    <dimen name="default_ddm_divider_width">0.5dp</dimen>
+    <dimen name="default_ddm_divider_margin">10dp</dimen>
+    <dimen name="default_ddm_menu_text_size">14sp</dimen>
+    <dimen name="default_ddm_menu_text_padding_horizontal">5dp</dimen>
+    <dimen name="default_ddm_menu_text_padding_vertical">12dp</dimen>
+
+    <!-- btn-->
+    <dimen name="default_btn_view_radius_phone">5dp</dimen>
+
+</resources>

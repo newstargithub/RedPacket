@@ -1,9 +1,10 @@
 package com.halo.redpacket
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.halo.redpacket.inject.DaggerDemoComponent
 import com.halo.redpacket.inject.DaggerUserComponent2
 import com.halo.redpacket.inject.IService
 import com.halo.redpacket.inject.UserInject
@@ -38,7 +39,10 @@ class PmActivity : AppCompatActivity() {
             Toast.makeText(this, user.testModule(), Toast.LENGTH_LONG).show()
         }
         button2.setOnClickListener {
-            Toast.makeText(this, service.foo(), Toast.LENGTH_LONG).show()
+            val uri = Uri.parse("wlbapp://android.wlb.com?action=WlbMyCoupon")
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent)
+//            Toast.makeText(this, service.foo(), Toast.LENGTH_LONG).show()
         }
     }
 

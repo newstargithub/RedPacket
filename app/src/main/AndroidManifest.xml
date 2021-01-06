@@ -2,15 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.halo.redpacket">
-    <!-- 震动权限 -->
+    <!-- 加速传感器权限 -->
     <application
         android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".PmActivity"></activity>
+        android:theme="@style/XUITheme.Phone">
+        <activity android:name=".ui.fragment.ContainerActivity"></activity>
+        <activity android:name=".PmActivity" />
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,13 +24,13 @@
         <activity android:name=".skin.SkinActivity" />
         <activity android:name=".activity.CrashDisplayActivity" />
         <activity android:name=".ui.about.AboutusActivity" />
-    </application> <!-- 加速传感器权限 -->
-    <uses-permission android:name="android.hardware.sensor.accelerometer" />
+    </application>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.hardware.sensor.accelerometer" />
 
 </manifest>

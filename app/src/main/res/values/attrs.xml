@@ -7,4 +7,156 @@
         <attr name="rollDuration" format="float"/>
         <attr name="rollRepeatCount" format="integer"/>
     </declare-styleable>
+
+    <!-- 自定义属性   -->
+    <declare-styleable name="RadiusImageView">
+        <!--边框宽度，默认：0-->
+        <attr name="riv_border_width" format="dimension" />
+        <!--边框的颜色，默认：Color.GRAY-->
+        <attr name="riv_border_color" format="color" />
+        <!--选中时，覆盖在图片上的图层颜色，默认：Color.TRANSPARENT-->
+        <attr name="riv_selected_mask_color" format="color" />
+        <!--边框选中时的颜色，默认：Color.GRAY-->
+        <attr name="riv_selected_border_color" format="color" />
+        <!--边框选中时的宽度，默认：0-->
+        <attr name="riv_selected_border_width" format="dimension" />
+        <!--圆角的大小，默认0-->
+        <attr name="riv_corner_radius" format="dimension" />
+        <!--是否是椭圆形，默认：false-->
+        <attr name="riv_is_oval" format="boolean" />
+        <!--图片是否是圆形的，默认：false-->
+        <attr name="riv_is_circle" format="boolean" />
+        <!--图片是否可触摸选中，默认：true-->
+        <attr name="riv_is_touch_select_mode_enabled" format="boolean" />
+    </declare-styleable>
+
+    <!--XUIWrapContentListView-->
+    <declare-styleable name="XUIWrapContentListView">
+        <!--设置listView的最大高度-->
+        <attr name="wclv_max_height" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="ClearEditText">
+        <!--清除按钮的图片资源-->
+        <attr name="cet_clearIcon" format="reference" />
+        <!--清除按钮的图片尺寸-->
+        <attr name="cet_clearIconSize" format="dimension" />
+    </declare-styleable>
+    <attr name="ClearEditTextStyle" format="reference" />
+
+    <!-- PasswordEditText -->
+    <declare-styleable name="PasswordEditText">
+        <!--显示密码的图标资源-->
+        <attr name="pet_iconShow" format="reference" />
+        <!--隐藏密码的图标资源-->
+        <attr name="pet_iconHide" format="reference" />
+        <!--是否触摸显示密码-->
+        <attr name="pet_hoverShowsPw" format="boolean" />
+        <!--是否使用系统默认字体-->
+        <attr name="pet_nonMonospaceFont" format="boolean" />
+        <!--图标是否设置透明度, 默认是true-->
+        <attr name="pet_enableIconAlpha" format="boolean" />
+        <!--密码输入框文字的样式是否是“*”，默认是false-->
+        <attr name="pet_isAsteriskStyle" format="boolean" />
+    </declare-styleable>
+    <attr name="PasswordEditTextStyle" format="reference" />
+
+    <declare-styleable name="MultiLineEditText">
+        <!--最大输入文字的数目，默认240-->
+        <attr name="mlet_maxCount" format="integer" />
+        <!--是否忽略中英文的差异，默认true-->
+        <attr name="mlet_ignoreCnOrEn" format="boolean" />
+        <!--输入框提示文字-->
+        <attr name="mlet_hintText" format="string|reference" />
+        <!--输入框提示文字的颜色-->
+        <attr name="mlet_hintTextColor" format="color|reference" />
+        <!--输入框的padding， 默认10dp-->
+        <attr name="mlet_contentPadding" format="dimension" />
+        <!--输入框背景-->
+        <attr name="mlet_contentBackground" format="reference" />
+        <!--输入框的内容-->
+        <attr name="mlet_contentText" format="string|reference" />
+        <!--输入框文字的大小-->
+        <attr name="mlet_contentTextSize" format="dimension|reference" />
+        <!--输入框文字的颜色-->
+        <attr name="mlet_contentTextColor" format="color|reference" />
+        <!--输入框的高度，默认140dp-->
+        <attr name="mlet_contentViewHeight" format="dimension|reference" />
+        <!--输入框的高度是否是固定高度，默认是true-->
+        <attr name="mlet_isFixHeight" format="boolean" />
+        <!--统计数字显示剩余数目,默认false-->
+        <attr name="mlet_showSurplusNumber" format="boolean" />
+    </declare-styleable>
+    <attr name="MultiLineEditTextStyle" format="reference" />
+
+    <attr name="XUITipPointStyle" format="reference" />
+
+    <!--DropDownMenu 下拉选择菜单-->
+    <declare-styleable name="DropDownMenu">
+        <!--下拉选择菜单的内容布局-->
+        <attr name="ddm_contentLayoutId" format="reference" />
+        <!--菜单垂直分割线的颜色，默认R.attr.xui_config_color_separator_dark-->
+        <attr name="ddm_dividerColor" format="color" />
+        <!--菜单垂直分割线的宽度， 默认0.5dp-->
+        <attr name="ddm_dividerWidth" format="dimension" />
+        <!--菜单垂直分割线的Margin， 默认10dp-->
+        <attr name="ddm_dividerMargin" format="dimension" />
+        <!--菜单底线的颜色, 默认R.attr.xui_config_color_separator_light-->
+        <attr name="ddm_underlineColor" format="color" />
+        <!--菜单底线的高度， 默认1dp-->
+        <attr name="ddm_underlineHeight" format="dimension" />
+        <!--半透明遮罩颜色, 默认#88888888-->
+        <attr name="ddm_maskColor" format="color" />
+        <!--菜单文字的字体大小，默认14sp-->
+        <attr name="ddm_menuTextSize" format="dimension" />
+        <!--菜单文字水平padding，默认5dp-->
+        <attr name="ddm_menuTextPaddingHorizontal" format="dimension" />
+        <!--菜单文字垂直padding，默认12dp-->
+        <attr name="ddm_menuTextPaddingVertical" format="dimension" />
+        <!--菜单文字选中的颜色，默认R.attr.colorAccent-->
+        <attr name="ddm_menuTextSelectedColor" format="color" />
+        <!--菜单文字未选中的颜色，默认R.attr.xui_config_color_content_text-->
+        <attr name="ddm_menuTextUnselectedColor" format="color" />
+        <!--菜单选择时的图标， 默认R.drawable.ddm_ic_arrow_up-->
+        <attr name="ddm_menuSelectedIcon" format="reference" />
+        <!--菜单未选择时的图标, 默认R.drawable.ddm_ic_arrow_down-->
+        <attr name="ddm_menuUnselectedIcon" format="reference" />
+        <!--菜单的背景颜色，默认Color.WHITE-->
+        <attr name="ddm_menuBackgroundColor" format="color" />
+        <!--选择菜单的高度/屏幕高度 占比， 默认0.5-->
+        <attr name="ddm_menuHeightPercent" format="float" />
+    </declare-styleable>
+    <attr name="DropDownMenuStyle" format="reference" />
+
+    <!-- 状态透明度-->
+    <attr name="xui_switch_alpha_pressed" format="boolean" />
+    <attr name="xui_switch_alpha_disabled" format="boolean" />
+    <attr name="xui_alpha_pressed" format="float" />
+    <attr name="xui_alpha_disabled" format="float" />
+
+    <!--普通文字-->
+    <!--标题文字大小-->
+    <attr name="xui_config_size_title_text" format="dimension" />
+    <!--正文内容文字大小-->
+    <attr name="xui_config_size_content_text" format="dimension" />
+    <!--辅助说明文字大小-->
+    <attr name="xui_config_size_explain_text" format="dimension" />
+    <attr name="xui_config_size_spinner_text" format="dimension"/>
+
+    <attr name="xui_config_color_title_text" format="color" />
+    <attr name="xui_config_color_content_text" format="color" />
+    <attr name="xui_config_color_explain_text" format="color" />
+
+    <attr name="xui_config_content_spacing_horizontal" format="dimension"/>
+    <attr name="xui_config_content_spacing_vertical" format="dimension"/>
+    <attr name="xui_config_simple_list_item_height" format="dimension" />
+    <attr name="xui_config_simple_list_icon_size" format="dimension" />
+
+    <!--**********************************************
+    *             xui list item bg                  *
+    **********************************************-->
+    <attr name="xui_config_divider_height" format="dimension" />
+    <attr name="xui_config_separator_height" format="dimension" />
+
+
 </resources>

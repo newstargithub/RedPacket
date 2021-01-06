@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.halo.redpacket.activity.PieImageActivity
 import com.halo.redpacket.inject.*
 import com.halo.redpacket.mvvm.LifeCycleListener
+import com.halo.redpacket.ui.fragment.ContainerActivity
 import java.util.*
 import javax.inject.Inject
 
@@ -18,7 +19,8 @@ class HomeActivity : AppCompatActivity() {
     private val arrays = arrayOf<Class<*>>(
             PieImageActivity::class.java,
             MainActivity::class.java,
-            PmActivity::class.java
+            PmActivity::class.java,
+            ContainerActivity::class.java
     )
 
     @Inject
@@ -28,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         val listView = findViewById<View>(R.id.listView) as ListView
-        val list = Arrays.asList(*arrays)
+        val list = listOf(*arrays)
         listView.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, list)
         listView.onItemClickListener = OnItemClickListener { parent, view, position, id ->
             val intent = Intent(this@HomeActivity, arrays[position])

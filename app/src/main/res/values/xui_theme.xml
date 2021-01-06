@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="XUIBaseTheme" parent="AppTheme">
+
+        <!--自定义属性配置-->
+        <!-- 透明度 -->
+        <item name="xui_switch_alpha_pressed">true</item>
+        <item name="xui_switch_alpha_disabled">true</item>
+        <item name="xui_alpha_pressed">@dimen/xui_alpha_pressed</item>
+        <item name="xui_alpha_disabled">@dimen/xui_alpha_disabled</item>
+
+        <!--按钮样式-->
+        <item name="xui_btn_view_radius">8dp</item>
+        <item name="xui_btn_view_width">104dp</item>
+        <item name="xui_btn_view_height">36dp</item>
+        <item name="xui_btn_view_text_size">14sp</item>
+        <item name="xui_btn_view_border_width">0.8dp</item>
+        <item name="xui_config_icon_drawable_padding">8dp</item>
+
+        <!--**********************************************
+        *               通用颜色属性设置                    *
+        ***********************************************-->
+        <item name="xui_config_color_error_text">@color/xui_config_color_red</item>
+        <item name="xui_config_color_input_text">@color/xui_config_color_edittext_input_text</item>
+        <item name="xui_config_color_hint_text">@color/xui_config_color_edittext_hint_text</item>
+        <item name="xui_config_color_stroke">@color/xui_config_color_edittext_stroke</item>
+        <item name="xui_config_color_disable">@color/xui_config_color_edittext_disable</item>
+        <item name="xui_config_color_pressed">@color/xui_config_color_background_pressed</item>
+
+        <!--**********************************************
+        *                   xui popup                    *
+        ***********************************************-->
+        <item name="xui_popup_bg">@drawable/xui_popup_bg</item>
+        <item name="xui_popup_arrow_down">@drawable/xui_popup_arrow_down</item>
+        <item name="xui_popup_arrow_up">@drawable/xui_popup_arrow_up</item>
+        <item name="xui_popup_arrow_up_margin_top">0dp</item>
+        <item name="xui_popup_arrow_down_margin_bottom">0dp</item>
+
+        <!--系统属性配置 android:xxx-->
+        <!-- 条目的style -->
+        <item name="android:gridViewStyle">@style/GridView</item>
+        <!--<item name="selectableItemBackground">@drawable/xui_config_selectable_item_selector</item>-->
+        <item name="android:listSelector">@drawable/xui_config_selectable_item_selector</item>
+        <item name="android:listDivider">@drawable/xui_config_list_divider</item>
+
+        <!--**********************************************
+       *               xui 提供的控件样式                  *
+       ***********************************************-->
+        <item name="ClearEditTextStyle">@style/EditText.Clear</item>
+        <item name="PasswordEditTextStyle">@style/EditText.Password</item>
+        <item name="DropDownMenuStyle">@style/DropDownMenu</item>
+    </style>
+
+
+    <style name="XUITheme.Phone" parent="XUIBaseTheme">
+        <!--全局样式-->
+        <item name="xui_config_content_spacing_horizontal">16dp</item>
+        <item name="xui_config_content_spacing_vertical">10dp</item>
+        <item name="xui_config_simple_list_item_height">41dp</item>
+        <item name="xui_config_simple_list_icon_size">22dp</item>
+        <item name="xui_config_separator_height">1dp</item>
+
+        <item name="xui_config_color_background">@color/xui_config_color_background_phone</item>
+        <item name="android:windowBackground">?attr/xui_config_color_background</item>
+
+        <item name="xui_config_color_separator_light">@color/xui_config_color_separator_light_phone</item>
+        <item name="xui_config_color_separator_dark">@color/xui_config_color_separator_dark_phone</item>
+        <item name="xui_config_divider_height">@dimen/xui_list_divider_height_phone</item>
+        <item name="android:listViewStyle">@style/ListView.Phone</item>
+
+        <!--文字字号样式-->
+        <item name="xui_config_size_title_text">21sp</item>
+        <item name="xui_config_size_content_text">18sp</item>
+        <item name="xui_config_size_explain_text">14sp</item>
+        <item name="xui_config_size_spinner_text">14sp</item>
+
+
+        <!--*********************************************
+       *                  Dialog                       *
+       **********************************************-->
+        <item name="xui_dialog_radius_size">@dimen/xui_dialog_radius_size_phone</item>
+        <item name="xui_dialog_loading_padding_size">@dimen/xui_dialog_loading_padding_size_phone
+        </item>
+        <item name="xui_dialog_loading_min_size">@dimen/xui_dialog_loading_min_size_phone</item>
+        <item name="xui_dialog_mini_loading_padding_size">
+            @dimen/xui_dialog_mini_loading_padding_size_phone
+        </item>
+        <item name="xui_dialog_mini_loading_min_size">
+            @dimen/xui_dialog_mini_loading_min_size_phone
+        </item>
+        <item name="xui_loading_view_size">@dimen/xui_loading_view_size_phone</item>
+        <item name="xui_mini_loading_view_size">@dimen/xui_mini_loading_view_size_phone</item>
+        <item name="xui_loading_text_size">@dimen/xui_loading_text_size_phone</item>
+        <item name="xui_loading_view_width">@dimen/xui_loading_view_width_phone</item>
+        <item name="xui_loading_margin_size">@dimen/xui_loading_margin_size_phone</item>
+        <item name="xui_mini_loading_margin_size">@dimen/xui_mini_loading_margin_size_phone</item>
+        <item name="mini_loading_view_size">@dimen/mini_loading_view_size_phone</item>
+
+
+        <!--**********************************************
+        *                 xui bottom sheet              *
+        ***********************************************-->
+        <item name="xui_bottom_sheet_title_style">@style/BottomSheetTitleStyle</item>
+        <item name="xui_bottom_sheet_title_appearance">@style/TextStyle.Title</item>
+        <item name="xui_bottom_sheet_title_bg">?attr/xui_list_item_bg_with_border_bottom_selector</item>
+
+        <item name="xui_bottom_sheet_list_item_padding_horizontal">?attr/xui_config_content_spacing_horizontal</item>
+        <item name="xui_bottom_sheet_list_item_text_style">@style/BottomSheetListItemTextStyle
+        </item>
+        <item name="xui_bottom_sheet_list_item_text_appearance">@style/TextStyle.Content</item>
+        <item name="xui_bottom_sheet_list_item_bg">?attr/xui_list_item_bg_with_border_bottom_selector</item>
+        <item name="xui_bottom_sheet_grid_item_text_appearance">@style/TextStyle.Explain</item>
+
+        <item name="xui_bottom_sheet_button_text_color">@color/xui_config_color_gray_2</item>
+        <item name="xui_bottom_sheet_button_background">@drawable/xui_divider_top_bitmap</item>
+
+
+        <!-- Dialog的style -->
+        <item name="xui_dialog_background_dim_amount">0.6</item>
+
+
+        <!--**********************************************
+        *               xui common list                  *
+        ***********************************************-->
+        <item name="xui_common_list_item_icon_margin_right">12dp</item>
+        <item name="xui_common_list_item_accessory_margin_left">14dp</item>
+        <item name="xui_common_list_item_title_v_text_size">15sp</item>
+        <item name="xui_common_list_item_title_h_text_size">16sp</item>
+        <item name="xui_common_list_item_h_space_min_width">14dp</item>
+        <item name="xui_common_list_item_detail_v_text_size">13sp</item>
+        <item name="xui_common_list_item_detail_h_text_size">14sp</item>
+        <item name="xui_common_list_item_detail_line_space">5dp</item>
+
+        <item name="xui_list_item_bg_with_border_bottom">
+            @drawable/xui_list_item_bg_with_border_bottom
+        </item>
+        <item name="xui_list_item_bg_with_border_bottom_pressed">
+            @drawable/xui_list_item_bg_with_border_bottom_pressed
+        </item>
+        <item name="xui_list_item_bg_with_border_bottom_selector">
+            @drawable/xui_list_item_bg_with_border_bottom_selector
+        </item>
+        <item name="xui_list_item_bg_with_border_double">
+            @drawable/xui_list_item_bg_with_border_double
+        </item>
+        <item name="xui_list_item_bg_with_border_double_pressed">
+            @drawable/xui_list_item_bg_with_border_double_pressed
+        </item>
+        <item name="xui_list_item_bg_with_border_double_selector">
+            @drawable/xui_list_item_bg_with_border_double_selector
+        </item>
+        <item name="xui_list_item_bg_with_border_none_selector">
+            @drawable/xui_list_item_bg_with_border_none_selector
+        </item>
+        <item name="xui_list_item_bg_with_border_top">@drawable/xui_list_item_bg_with_border_top
+        </item>
+        <item name="xui_list_item_bg_with_border_top_pressed">
+            @drawable/xui_list_item_bg_with_border_top_pressed
+        </item>
+        <item name="xui_list_item_bg_with_border_top_selector">
+            @drawable/xui_list_item_bg_with_border_top_selector
+        </item>
+
+        <item name="xui_list_item_height">@dimen/xui_list_item_height</item>
+        <item name="xui_list_item_height_higher">@dimen/xui_list_item_height_higher</item>
+
+        <!--**********************************************
+        *                 xui bottom sheet              *
+        ***********************************************-->
+        <item name="xui_bottom_sheet_title_height">56dp</item>
+
+        <item name="xui_bottom_sheet_list_item_height">56dp</item>
+        <item name="xui_bottom_sheet_list_item_mark_margin_left">12dp</item>
+        <item name="xui_bottom_sheet_list_item_tip_point_margin_left">4dp</item>
+        <item name="xui_bottom_sheet_list_item_icon_size">22dp</item>
+        <item name="xui_bottom_sheet_list_item_icon_margin_right">12dp</item>
+
+        <item name="xui_bottom_sheet_grid_padding_vertical">12dp</item>
+        <item name="xui_bottom_sheet_grid_line_padding_horizontal">12dp</item>
+        <item name="xui_bottom_sheet_grid_line_vertical_space">0dp</item>
+        <item name="xui_bottom_sheet_grid_item_mini_width">84dp</item>
+        <item name="xui_bottom_sheet_grid_item_paddingTop">0dp</item>
+        <item name="xui_bottom_sheet_grid_item_paddingBottom">8dp</item>
+        <item name="xui_bottom_sheet_grid_item_icon_size">56dp</item>
+        <item name="xui_bottom_sheet_grid_item_icon_marginTop">12dp</item>
+        <item name="xui_bottom_sheet_grid_item_icon_marginBottom">9dp</item>
+
+        <item name="xui_bottom_sheet_button_height">56dp</item>
+        <item name="xui_bottom_sheet_button_text_size">15sp</item>
+
+        <!-- 文字的style -->
+        <!--<item name="android:textViewStyle">@style/AppTheme.Widget.TextView</item>-->
+        <!-- 标题颜色 -->
+        <item name="xui_config_color_title_text">@color/xui_config_color_title_text</item>
+        <item name="xui_config_color_content_text">@color/xui_config_color_content_text</item>
+        <item name="xui_config_color_explain_text">@color/xui_config_color_explain_text</item>
+        <!--应用的主要文字颜色，actionBar的标题文字默认使用该颜色-->
+        <item name="android:textColorPrimary">@color/xui_config_color_primary_text</item>
+
+        <!--**********************************************
+        *                   xui_round_btn                *
+        ***********************************************-->
+        <item name="xui_round_btn_bg_color">@color/xui_transparent</item>
+        <item name="xui_round_btn_border_color">@color/xui_default_round_btn_blue_border</item>
+        <item name="xui_round_btn_text_color">@color/xui_default_round_btn_blue_text</item>
+        <item name="xui_btn_view_disable_color">@color/xui_btn_disable_color</item>
+
+        <!--popup-->
+        <item name="xui_popup_width">@dimen/xui_popup_width_phone</item>
+        <item name="xui_tip_popup_padding_top">@dimen/xui_tip_popup_padding_top_phone</item>
+        <item name="xui_tip_popup_padding_left">@dimen/xui_tip_popup_padding_left_phone</item>
+
+
+        <!--输入框样式-->
+        <item name="xui_config_size_edittext_input_text">
+            @dimen/xui_config_size_edittext_input_text_phone
+        </item>
+        <item name="xui_config_size_edittext_helper_text">
+            @dimen/xui_config_size_edittext_helper_text_phone
+        </item>
+        <item name="xui_config_size_edittext_components_spacing">
+            @dimen/xui_config_size_edittext_components_spacing_phone
+        </item>
+        <item name="xui_config_size_edittext_left_padding">
+            @dimen/xui_config_size_edittext_left_padding_phone
+        </item>
+        <item name="xui_config_size_edittext_radius">@dimen/xui_config_size_edittext_radius_phone
+        </item>
+        <item name="xui_config_size_edittext_height">@dimen/xui_config_size_edittext_height_phone
+        </item>
+    </style>
+
+    <!--**********************************************
+    *                  BaseStyle                    *
+    **********************************************-->
+    <style name="ListViewBase" parent="android:Widget.Holo.Light.ListView">
+        <item name="android:background">@color/xui_config_color_transparent</item>
+        <item name="android:listSelector">@drawable/xui_config_selectable_item_selector</item>
+    </style>
+
+    <style name="GridViewBase" parent="android:Widget.Holo.Light.GridView" />
+
+    <!--*********************************************
+      *                  条目样式                     *
+      **********************************************-->
+    <style name="ListView.Phone" parent="ListViewBase">
+        <item name="android:dividerHeight">@dimen/xui_list_divider_height_phone</item>
+        <item name="android:divider">@color/xui_config_color_separator_dark_phone</item>
+    </style>
+
+    <!-- GridView -->
+    <style name="GridView" parent="GridViewBase">
+        <item name="android:background">@color/xui_config_color_transparent</item>
+        <item name="android:listSelector">@drawable/xui_config_selectable_item_selector</item>
+    </style>
+
+</resources>

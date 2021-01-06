@@ -64,7 +64,6 @@ public class CrashHandler implements UncaughtExceptionHandler {
 	 * @param context
 	 */
 	public void init(Context context){
-
 		this.context = context.getApplicationContext();
 		// 获取系统默认的UncaughtException处理器
 		mDefaultHandler = Thread.getDefaultUncaughtExceptionHandler();

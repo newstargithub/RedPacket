@@ -23,6 +23,18 @@ fun View.showKeyboard(): Boolean {
     return (context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).showSoftInput(this, 0)
 }
 
+fun <T : View> T.gone() {
+    this.visibility = View.GONE
+}
+
+fun <T : View> T.invisible() {
+    this.visibility = View.INVISIBLE
+}
+
+fun <T : View> T.visible() {
+    this.visibility = View.VISIBLE
+}
+
 /**
  * 默认的时间单位是毫秒
  */

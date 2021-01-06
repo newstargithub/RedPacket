@@ -28,10 +28,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    externalNativeBuild {
-        ndkBuild {
-            path file('src/main/jni/Android.mk')
-        }
+//    externalNativeBuild {
+//        ndkBuild {
+//            path file('src/main/jni/Android.mk')
+//        }
+//    }
+    /**
+     * More than one file was found with OS independent path 'META-INF/proguard/coroutines.pro
+     */
+    packagingOptions {
+        exclude 'META-INF/proguard/coroutines.pro'
     }
 }
 

@@ -6,6 +6,110 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="xui_icon_check_mark">@drawable/xui_icon_check_mark</item>
+        <item name="XUITipPointStyle">@style/XUITipPoint</item>
+
     </style>
+
+    <!--*********************************************
+     *                  DialogTheme                  *
+     **********************************************-->
+    <!-- BaseDialog -->
+    <style name="XUIDialog" parent="@android:style/Theme.Dialog">
+        <!-- Dialog的windowFrame框为无 -->
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <!-- 是否漂现在activity上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否半透明 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!--自定义弹窗样式-->
+    <style name="XUIDialog.Custom">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <!-- 去除黑色边框的关键设置项 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 屏幕背景是否变暗 -->
+        <item name="android:backgroundDimAmount">?attr/xui_dialog_background_dim_amount</item>
+    </style>
+
+    <!--BottomSheet-->
+    <style name="BottomSheet" parent="android:Theme.Dialog">
+        <item name="android:backgroundDimAmount">?attr/xui_dialog_background_dim_amount</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@null
+        </item><!-- 为了避免在有 NavigationBar 的手机上 Dialog 从 NavigationBar 底部上来。去掉 Dialog 的动画，使用 View 的动画。-->
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <!--BottomSheetTitle-->
+    <style name="BottomSheetTitleStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/xui_bottom_sheet_title_height</item>
+        <item name="android:background">?attr/xui_bottom_sheet_title_bg</item>
+        <item name="android:ellipsize">middle</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">?attr/xui_bottom_sheet_list_item_padding_horizontal</item>
+        <item name="android:paddingEnd">?attr/xui_bottom_sheet_list_item_padding_horizontal</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!-- 提示更新小圆点 -->
+    <style name="XUITipPoint">
+        <item name="android:layout_width">@dimen/xui_tips_point_size</item>
+        <item name="android:layout_height">@dimen/xui_tips_point_size</item>
+        <item name="android:background">@drawable/xui_tips_point</item>
+    </style>
+
+    <style name="TextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- 标题 style -->
+    <style name="TextStyle.Title">
+        <item name="android:textSize">?attr/xui_config_size_title_text</item>
+        <item name="android:textColor">?attr/xui_config_color_title_text</item>
+    </style>
+
+    <!-- 标题 style -->
+    <style name="TextStyle.Title.wrap">
+        <item name="android:layout_marginBottom">?attr/xui_config_content_spacing_horizontal</item>
+    </style>
+
+    <!-- 内容 style -->
+    <style name="TextStyle.Content">
+        <item name="android:textSize">?attr/xui_config_size_content_text</item>
+        <item name="android:textColor">?attr/xui_config_color_content_text</item>
+    </style>
+
+    <!-- 内容 style -->
+    <style name="TextStyle.Content.wrap">
+        <item name="android:layout_marginBottom">?attr/xui_config_content_spacing_vertical</item>
+    </style>
+
+    <!-- 辅助说明 style -->
+    <style name="TextStyle.Explain">
+        <item name="android:textSize">?attr/xui_config_size_explain_text</item>
+        <item name="android:textColor">?attr/xui_config_color_explain_text</item>
+    </style>
+
+    <style name="BottomSheetListItemTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">middle</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
 
 </resources>

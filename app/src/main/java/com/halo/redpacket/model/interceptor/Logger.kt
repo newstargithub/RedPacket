@@ -20,7 +20,7 @@ class Logger {
         private const val DOUBLE_DIVIDER = "═════════════════════════════════════════════════"
         private val TOP_BORDER = TOP_LEFT_CORNER + DOUBLE_DIVIDER + DOUBLE_DIVIDER
         private val BOTTOM_BORDER = BOTTOM_LEFT_CORNER + DOUBLE_DIVIDER + DOUBLE_DIVIDER
-        private val LINE_SEPARATOR = System.getProperty("line.separator")
+        private val LINE_SEPARATOR: String = System.getProperty("line.separator")?: "\n"
 
         private fun String.isLineEmpty() = isEmpty() || N == this || T == this || this.trim { it <= ' ' }.isEmpty()
 

@@ -6,6 +6,7 @@ import com.halo.redpacket.R
 import com.halo.redpacket.base.BaseFragment
 import com.halo.redpacket.mvvm.viewModelDelegate
 import kotlinx.android.synthetic.main.fragment_fruit.*
+import java.util.ArrayList
 
 class FruitFragment : BaseFragment() {
 
@@ -17,10 +18,14 @@ class FruitFragment : BaseFragment() {
 
     override fun initView() {
         viewModel.getFruitList().observe(this, Observer {list->
-            var adapter = ArrayAdapter(context, android.R.layout.simple_list_item_1, list)
+            var adapter = context?.let {
+                ArrayAdapter(it, android.R.layout.simple_list_item_1, list)
+            }
             this.listView.adapter = adapter
         })
     }
+
+
 
 
 }

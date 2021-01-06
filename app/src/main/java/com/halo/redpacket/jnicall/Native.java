@@ -9,7 +9,7 @@ package com.halo.redpacket.jnicall;
  * com.halo.redpacket.jnicall.Native
  */
 public class Native {
-    public native void initilize();
+    /*public native void initilize();
     public native void threadStart();
     public native void threadStop();
 
@@ -19,5 +19,5 @@ public class Native {
 
     static {
         System.loadLibrary("native");
-    }
+    }*/
 }

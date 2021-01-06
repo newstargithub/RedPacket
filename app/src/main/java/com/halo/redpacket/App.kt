@@ -2,6 +2,7 @@ package com.halo.redpacket
 
 import android.app.Application
 import androidx.lifecycle.Transformations.map
+import com.halo.redpacket.util.CrashHandler
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 import kotlin.properties.Delegates
@@ -54,6 +55,7 @@ class App : Application() {
 
     private fun initLog() {
 //        L.header(getHeader())       // 初始化日志框架的Header
+        CrashHandler.getInstance().init(this)
     }
 
     /**

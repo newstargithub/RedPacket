@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="ClearEditText:" />
+
+            <com.halo.redpacket.widget.edittext.ClearEditText
+                android:id="@+id/clear_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:hint="请输入内容..."
+                android:textAlignment="viewStart"/>
+
+            <com.halo.redpacket.widget.edittext.ClearEditText
+                android:id="@+id/clear_edit_text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:hint="请输入内容..."
+                app:cet_clearIcon="@drawable/icon_clear"
+                app:cet_clearIconSize="@dimen/default_clear_icon_size" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="PasswordEditText:" />
+
+            <!--<com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="16dp"
+                android:gravity="start"
+                android:textAlignment="viewStart"
+                android:textDirection="locale">-->
+
+                <com.halo.redpacket.widget.edittext.PasswordEditText
+                    android:id="@+id/input_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:hint="输入密码"
+                    android:inputType="textPassword"
+                    android:layoutDirection="locale"
+                    android:textAlignment="viewStart"
+                    app:pet_enableIconAlpha="true"
+                    app:pet_isAsteriskStyle="true" />
+
+           <!-- </com.google.android.material.textfield.TextInputLayout>-->
+
+            <com.halo.redpacket.widget.edittext.PasswordEditText
+                android:id="@+id/input_password2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:hint="重复密码"
+                android:inputType="textPassword"
+                android:layoutDirection="locale"
+                android:textAlignment="viewStart"
+                app:pet_enableIconAlpha="true"
+                app:pet_hoverShowsPw="true" />
+
+            <com.halo.redpacket.widget.edittext.MultiLineEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

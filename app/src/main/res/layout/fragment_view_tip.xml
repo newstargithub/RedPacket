@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/btn_left"
+            style="@style/Button.Radius"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Left" />
+
+        <Button
+            android:id="@+id/btn_top"
+            style="@style/Button.Radius"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Top" />
+
+        <Button
+            android:id="@+id/btn_right"
+            style="@style/Button.Radius"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Right" />
+
+        <Button
+            android:id="@+id/btn_bottom"
+            style="@style/Button.Radius"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Bottom" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="8dp"
+        android:text="Hello World!" />
+
+    <Button
+        android:id="@+id/bottomLeft"
+        style="@style/Button.Radius"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="32dp"
+        android:text="左下角" />
+
+    <Button
+        android:id="@+id/bottomRight"
+        style="@style/Button.Radius"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="32dp"
+        android:text="右下角" />
+
+</RelativeLayout>
