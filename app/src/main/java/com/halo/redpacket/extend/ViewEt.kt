@@ -82,7 +82,7 @@ fun <T : View> T.clickWithTrigger(time: Long = 600, block: (T) -> Unit){
     }
 }
 
-fun <T: View> T.clickEnable(): Boolean {
+private fun <T: View> T.clickEnable(): Boolean {
     var flag = false
     val currentClickTime = System.currentTimeMillis()
     if (currentClickTime - triggerLastTime >= triggerDelay) {

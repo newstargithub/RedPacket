@@ -111,5 +111,10 @@
         <item name="android:singleLine">true</item>
     </style>
 
+    <style name="CityPickerAnimation" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/cp_push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/cp_push_bottom_out</item>
+    </style>
+
 
 </resources>

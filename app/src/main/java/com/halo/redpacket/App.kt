@@ -2,6 +2,7 @@ package com.halo.redpacket
 
 import android.app.Application
 import androidx.lifecycle.Transformations.map
+import com.halo.redpacket.ui.fragment.location.LocationService
 import com.halo.redpacket.util.CrashHandler
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
@@ -50,7 +51,7 @@ class App : Application() {
     }
 
     private fun initStrict() {
-
+        LocationService.get().init(this)
     }
 
     private fun initLog() {
