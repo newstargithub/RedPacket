@@ -60,7 +60,6 @@ class CityPickerDialogFragment: DialogFragment() {
 
     private fun initViews() {
 
-
     }
 
     private fun initData() {
