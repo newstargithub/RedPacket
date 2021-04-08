@@ -16,7 +16,6 @@ import kotlin.reflect.KProperty
  ...
  }
  */
-
 class ViewModelDelegate<out T : BaseViewModel>(private var clazz: KClass<T>, private var factory: ViewModelProvider.Factory?, private var fromActivity: Boolean) {
     private var viewModel: T? = null
 
