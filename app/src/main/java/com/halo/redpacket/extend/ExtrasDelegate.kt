@@ -1,4 +1,4 @@
-package com.halo.redpacket.extend.delegate
+package com.halo.redpacket.extend
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -6,7 +6,6 @@ import kotlin.reflect.KProperty
 
 /**
  * 委托类
- * 使用委托属性的方式来封装 Extras，支持在 AppCompatActivity 和 Fragment 中使用。
  *
  * 上一个页面所传递过来的任何对象类型，都可以使用如下的方式获取。
  *  private val user: User? by extraDelegate("user")

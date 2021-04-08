@@ -7,7 +7,6 @@ import io.reactivex.*
 
 /**
  * RxJava 的 Observable、Flowbale、Completable、Single、Maybe 转为LiveData
- *支持 RxJava 的 Observable、Flowbale、Completable、Single、Maybe 绑定 AAC 的 Lifecycle。
  */
 fun <T> Observable<T>.toLiveData(strategy: BackpressureStrategy = BackpressureStrategy.BUFFER) : LiveData<T> {
     return LiveDataReactiveStreams.fromPublisher(this.toFlowable(strategy))

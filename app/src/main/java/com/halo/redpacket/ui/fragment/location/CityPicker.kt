@@ -92,8 +92,8 @@ class CityPicker(manager: FragmentManager) {
             }
             ft.addToBackStack(null)
             val fragment = CityPickerDialogFragment.newInstance(mEnableAnim)
-//            fragment.setLocatedCity(mLocation)
-//            fragment.setHotCities(mHotCities)
+            fragment.setLocatedCity(mLocation)
+            fragment.setHotCities(mHotCities)
             fragment.setAnimationStyle(mAnimStyle)
             fragment.setOnPickListener(mOnPickListener)
             fragment.show(ft, CityPicker.TAG())

@@ -23,19 +23,6 @@ fun <T> Maybe<T>.errorReturn(defaultValue: T) : Maybe<T> {
 
 /**
  * 这样无须在 onError 中处理异常，而且 errorReturn 还是一个高阶函数。action 参数传递的是一个函数，专门用于处理异常。
- * 使用示例：
- * viewModel.getHelps(this)
-    .errorReturn(HttpResponse()) {
-        multi_status_view.showError()
-    }
-    .subscribe{
-        if (it.isOkStatus) {
-            multi_status_view.showContent()
-            adapter.addData(it.data?.list)
-        } else {
-            multi_status_view.showError()
-        }
-    }
  */
 fun <T> Maybe<T>.errorReturn(defaultValue: T, action: (Throwable)-> Unit) : Maybe<T> {
     return this.onErrorReturn {

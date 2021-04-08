@@ -12,14 +12,14 @@ class GlideWrapper {
     var url: String? = null // 图片的url
     var imageView: ImageView? = null // 需要加载图片的imageView控件
     var placeHolder: Int = R.drawable.shape_default_rec_bg //占位符
-    var error: Int = R.drawable.shape_default_rec_bg //错误提示符
-    var transformer: Transformation<Bitmap>? = null //图像转换
+    var error: Int = R.drawable.shape_default_rec_bg //  错误提示符
+    var transformer: Transformation<Bitmap>? = null //  图像转换
 }
 
 /**
  * 带有接收者的函数类型的参数 init: GlideWrapper.()-> Unit
  */
-fun load(init: GlideWrapper.() -> Unit) {
+fun load(init: GlideWrapper.()-> Unit) {
     val wrap = GlideWrapper()
     wrap.init()
     execute(wrap)

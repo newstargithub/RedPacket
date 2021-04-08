@@ -8,19 +8,9 @@ import org.json.JSONObject
 import java.nio.charset.Charset
 
 /***
- * 使用拦截器处理异常
- * 监听异常事件：解析响应 json 中的 code 字段，如果遇到业务异常，同样使用 RxBus 将业务异常的信息给用户进行提示
- * 网络请求返回的 Response 大多是采用如下这种形式：
-    {
-        "code":0,
-        "message":"success",
-        "data":{
-            ...
-        }
-    }
+ * 监听异常事件
  */
 class NetworkExceptionInterceptor : Interceptor {
-
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
         val response = chain.proceed(request)

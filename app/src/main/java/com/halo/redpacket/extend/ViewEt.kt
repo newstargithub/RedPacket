@@ -69,7 +69,7 @@ fun <T: View> T.click(block: (T) -> Unit) = setOnClickListener {
 
 /***
  * 带延迟过滤的点击事件View扩展
- * @param time Long 延迟时间，默认600毫秒
+ * @param delay Long 延迟时间，默认600毫秒
  * @param block: (T) -> Unit 函数
  * @return Unit
  */
@@ -92,18 +92,12 @@ private fun <T: View> T.clickEnable(): Boolean {
     return flag
 }
 
-/**
- * 扩展属性，上次触发点击事件时间
- */
 private var <T : View> T.triggerLastTime: Long
     get() = if (getTag(1123460103) != null) getTag(1123460103) as Long else 0
     set(value) {
         setTag(1123460103, value)
     }
 
-/**
- * 扩展属性，触发间隔时间
- */
 private var <T : View> T.triggerDelay: Long
     get() = if (getTag(1123461123) != null) getTag(1123461123) as Long else 600
     set(value) {

@@ -72,14 +72,8 @@ internal class LifecycleObservable(private val owner: LifecycleOwner): Observabl
 
     fun checkInActiveState():Boolean = owner.lifecycle.currentState == Lifecycle.State.DESTROYED
 
-    /**
-     * 不活跃
-     */
     fun checkInActive(event: Lifecycle.Event) = event == Lifecycle.Event.ON_STOP
 
-    /**
-     * 活跃状态 CREATED STARTED RESUMED
-     */
     fun shouldBeActive(): Boolean = owner.lifecycle.currentState.isAtLeast(Lifecycle.State.CREATED)
 
     fun isAttachedTo(owner: LifecycleOwner):Boolean = this.owner === owner

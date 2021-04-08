@@ -43,12 +43,13 @@ class LoggingInterceptor(val builder: Builder): Interceptor {
             request = requestBuilder.build()
         }
         if (!isDebug) {
-            //非debug 模式
             return chain.proceed(request)
         }
         val body = request.body()
-        var rContentType: MediaType? = body?.contentType()
-        var rSubtype: String? = rContentType?.subtype()
+        var rContentType: MediaType? = null
+        rContentType = body?.contentType()
+        var rSubtype: String? = null
+        rSubtype = rContentType?.subtype()
 
         if (builder.requestFlag) {
             if (request.method() == "GET") {
@@ -79,7 +80,7 @@ class LoggingInterceptor(val builder: Builder): Interceptor {
                     val source = it.source()
                     source.request(Long.MAX_VALUE)
                     val buffer = source.buffer()
-                    val bodyString = Logger.getJsonString(buffer.clone().readString(charsetUtf8))
+                    val bodyString = Logger.getJsonString(buffer.clone().readString(Charset.forName("UTF-8")))
                     Logger.printJsonResponse(builder, chainMs, isSuccessful, code, header, bodyString, requestUrl)
                 }
             } else {
@@ -90,9 +91,6 @@ class LoggingInterceptor(val builder: Builder): Interceptor {
         return response
     }
 
-    /**
-     * 不是文件
-     */
     private fun subtypeIsNotFile(subtype: String?): Boolean {
         return subtype != null && (subtype.contains("html")
                 || subtype.contains("json")

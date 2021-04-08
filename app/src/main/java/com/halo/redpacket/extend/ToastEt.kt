@@ -21,8 +21,8 @@ fun Toast.setGravityCenter(): Toast {
 
 /**
  * 设置Toast字体及背景颜色
- * @param messageColor 字体颜色
- * @param backgroundColor 背景颜色
+ * @param messageColor
+ * @param backgroundColor
  * @return
  */
 fun Toast.setToastColor(@ColorInt messageColor: Int, @ColorInt backgroundColor: Int) {
@@ -65,9 +65,6 @@ fun toast(@StringRes res: Int): Toast = Toast.makeText(App.instance, App.instanc
 //需要的地方调用withErrorIcon，默认不要添加
 //        .withErrorIcon()
 
-/**
- * 添加错误图标
- */
 fun Toast.withErrorIcon(@DrawableRes iconRes: Int = R.drawable.ic_toast_error): Toast {
     val view = view
     if (view != null) {

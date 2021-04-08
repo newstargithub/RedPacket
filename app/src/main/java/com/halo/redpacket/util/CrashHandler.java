@@ -1,6 +1,5 @@
 package com.halo.redpacket.util;
 
-import android.Manifest;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
@@ -14,9 +13,6 @@ import android.util.Log;
 import android.widget.Toast;
 
 
-import androidx.core.content.ContextCompat;
-
-import com.halo.redpacket.BuildConfig;
 import com.halo.redpacket.activity.CrashDisplayActivity;
 
 import java.io.File;
@@ -143,9 +139,6 @@ public class CrashHandler implements UncaughtExceptionHandler {
 	 * @return   返回文件名称,便于将文件传送到服务器 
 	 */
 	private String saveCrashInfoToFile(Throwable ex){
-		if (!BuildConfig.DEBUG || ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-			return null;
-		}
 		StringBuilder sb = new StringBuilder();
 		for(Map.Entry<String, String> entry : infos.entrySet()){
 			String key = entry.getKey();
@@ -171,7 +164,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
 			String time = formatter.format(new Date());
 			String fileName = "crash-"+time +"-"+timestamp+".txt";
 			if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
-				String path = Environment.getDataDirectory().getAbsolutePath() + "/log/crash";
+				String path = context.getFilesDir() + "/log/crash";
 				File dir = new File(path);
 				if (!dir.exists()) {
 					dir.mkdirs();
@@ -181,7 +174,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
 				fos.close();
 			}
 			return fileName;
-		} catch(Exception e){
+		}catch(Exception e){
 			Log.e(TAG,"an error occured while writing file...",e);
 		}
 		return null;

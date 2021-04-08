@@ -10,18 +10,7 @@
     <color name="check_bg">#f2f2f2</color>
 
 
-    <color name="font_color_1">#606060</color>
-    <color name="font_color_2">#696969</color>
-    <color name="font_color_3">#A89856</color>
-    <color name="font_color_4">#303030</color>
-    <color name="font_color_5">#909090</color>
-    <color name="font_color_6">#DF4B44</color>
-    <color name="font_color_7">#464646</color>
-    <color name="font_color_8">#B8B8B8</color>
-    <color name="font_color_9">#02BB85</color>
-    <color name="font_colro_10">#D8D8D8</color>
 
-    <color name="magic_list_line">#dddddd</color>
-    <color name="magic_think_ist_line">#99dddddd</color>
+
 
 </resources>

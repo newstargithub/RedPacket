@@ -1,5 +1,7 @@
 package com.halo.redpacket.model.interceptor
 
+import android.util.Log
+
 object LogManager {
     private var mLogProxy: LogProxy? = null
 

@@ -5,11 +5,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 
-/**
- * 感知 LifecycleOwner 的生命周期事件
- */
 class LifeCycleListener: LifecycleObserver {
-
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate(){
         Log.d(TAG, "onCreate")

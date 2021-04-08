@@ -44,20 +44,15 @@ fun isQOrHigher(): Boolean = versionOrHigher(29)
 
 fun isROrHigher(): Boolean = versionOrHigher(30)
 
-/**
- * 高于某版本就执行高阶函数：block
- */
 fun support(apiVersion:Int, block : () -> Unit) {
+
     if (versionOrHigher(apiVersion)) {
+
         block()
     }
 }
 
 fun <T> support(apiVersion: Int, function: () -> T, default: () -> T): T = if (versionOrHigher(apiVersion)) function() else default()
 
-/**
- * 等于或高于某版本
- * @param version 某版本
- */
 private fun versionOrHigher(version: Int) = Build.VERSION.SDK_INT >= version
 

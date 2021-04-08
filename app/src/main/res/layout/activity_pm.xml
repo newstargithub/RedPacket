@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
-        android:text="90"
+        tools:text="90"
         app:layout_constraintTop_toTopOf="parent"
         />
 
@@ -20,28 +20,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/quality"
-        android:text="pm2_5" />
+        tools:text="pm2_5" />
 
     <TextView
         android:id="@+id/pm2_5_24h"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/pm2_5"
-        android:text="pm2_5_24h" />
+        tools:text="pm2_5_24h" />
 
     <TextView
         android:id="@+id/so2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/pm2_5_24h"
-        android:text="so2" />
+        tools:text="so2" />
 
     <TextView
         android:id="@+id/so2_24h"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/so2"
-        android:text="so2_24h" />
+        tools:text="so2_24h" />
 
     <Button
         android:id="@+id/button"

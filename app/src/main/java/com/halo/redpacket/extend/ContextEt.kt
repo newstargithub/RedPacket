@@ -10,12 +10,13 @@ import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.*
-import com.halo.redpacket.util.ResUtils
+import androidx.annotation.ColorRes
+import androidx.annotation.DimenRes
+import androidx.annotation.LayoutRes
+import androidx.annotation.StringRes
 import java.io.File
 
 /**
- * 扩展属性，屏幕宽度
  * screen width in pixels
  */
 inline val Context.screenWidth
@@ -76,27 +77,6 @@ fun Context.color(@ColorRes id: Int): Int = if (Build.VERSION.SDK_INT >= Build.V
     resources.getColor(id, theme)
 } else {
     resources.getColor(id)
-}
-
-
-/**
- * 获取字符串的数组
- *
- * @param resId
- * @return
- */
-fun Context.getStringArray(@ArrayRes resId: Int): Array<String> {
-    return resources.getStringArray(resId)
-}
-
-/**
- * 获取数字的数组
- *
- * @param resId
- * @return
- */
-fun Context.getIntArray(@ArrayRes resId: Int): IntArray {
-    return resources.getIntArray(resId)
 }
 
 /**

@@ -58,9 +58,6 @@ class Logger {
             }
         }
 
-        /**
-         * 打印请求
-         */
         @JvmStatic
         fun printJsonRequest(builder: LoggingInterceptor.Builder, request: Request) {
             val tag = builder.getTag(true)

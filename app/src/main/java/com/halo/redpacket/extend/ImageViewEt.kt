@@ -9,10 +9,7 @@ import com.halo.redpacket.base.GlideRequest
 import com.halo.redpacket.util.DisplayUtil
 import com.halo.redpacket.util.glide.RoundedCornersTransformation
 
-/**
- * 对 Glide 的封装
- * 获取GlideRequest
- */
+
 fun ImageView.get(url: String?): GlideRequest<Drawable> = GlideApp.with(context).load(url)
 fun ImageView.get(url: Drawable?): GlideRequest<Drawable> = GlideApp.with(context).load(url)
 
@@ -46,9 +43,6 @@ fun ImageView.loadCircle(url: Drawable?) {
             .into(this)
 }
 
-/**
- * 圆形
- */
 fun ImageView.loadCircle(url: String?) {
     get(url).placeholder(R.drawable.shape_default_circle_bg)
             .apply(RequestOptions.circleCropTransform())

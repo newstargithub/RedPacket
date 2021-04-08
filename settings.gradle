@@ -1,3 +1,1 @@
-include ':common'
-include ':haoj'
 include ':app'
