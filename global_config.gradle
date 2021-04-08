@@ -38,7 +38,7 @@ ext {
                     "retrofit:retrofit"          : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
                     "retrofit:adapter-rxjava"    : "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}",
                     "retrofit:converter-gson"    : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
-                    "retrofit;converter-scalars" : "com.squareup.retrofit2:converter-scalars:${retrofitVersion}",
+                    "retrofit:converter-scalars" : "com.squareup.retrofit2:converter-scalars:${retrofitVersion}",
                     "okhttp3:okhttp"             : "com.squareup.okhttp3:okhttp:${okhttpVersion}",
                     "okhttp3:logging-interceptor": "com.squareup.okhttp3:logging-interceptor:${okhttpVersion}",
                     "okio"                       : "com.squareup.okio:okio:${okioVersion}",

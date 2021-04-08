@@ -5,8 +5,10 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.halo.redpacket.model.RetrofitManager;
+import com.halo.redpacket.model.RetryWithDelay;
 import com.halo.redpacket.mvp.BasePresenter;
 import com.halo.redpacket.util.RxJavaUtils;
+import com.safframework.lifecycle.RxLifecycle;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,8 +37,10 @@ public class MainActivity extends AppCompatActivity {
         RetrofitManager.get()
                 .apiService()
                 .publishEvent("fengzhizi715")
+                //重试机制
+                .retryWhen(new RetryWithDelay(3,1000))
                 //RxLifecycle 可以防止内存泄漏，当然除了使用它之外还有多种方式。
-//                .compose(RxLifecycle.bind(this).toLifecycleTransformer())
+                .compose(RxLifecycle.bind(this).toLifecycleTransformer())
                 .compose(RxJavaUtils.maybeToMain())
                 .subscribe();
     }

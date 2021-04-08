@@ -1,12 +1,18 @@
-package com.halo.redpacket.extend
+package com.halo.redpacket.extend.delegate
 
 import android.content.SharedPreferences
 import android.content.SharedPreferences.Editor
+import com.halo.redpacket.extend.EncryptUtils
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
 /**
  * SharedPreferences 的封装
+ * 委托属性
+ * @param key 键
+ * @param defaultValue 默认值
+ * @param getter 获取值方法
+ * @param setter 设置值方法
  *
  * 使用
  * class PrefsHelper(prefs: SharedPreferences) {
@@ -28,6 +34,7 @@ helper.isForeigner = false
 private inline fun <T> SharedPreferences.delegate(key: String? =null, defaultValue: T,
     crossinline getter: SharedPreferences.(String, T) -> T,
     crossinline setter: Editor.(String, T) -> Editor): ReadWriteProperty<Any, T>{
+
     return object : ReadWriteProperty<Any, T> {
         override fun getValue(thisRef: Any, property: KProperty<*>): T =
             getter(key?: property.name, defaultValue)
@@ -35,8 +42,12 @@ private inline fun <T> SharedPreferences.delegate(key: String? =null, defaultVal
         override fun setValue(thisRef: Any, property: KProperty<*>, value: T) =
                 edit().setter(key ?: property.name, value).apply()
     }
+
 }
 
+/**
+ * SharedPreferences扩展函数
+ */
 fun SharedPreferences.int(key: String?= null, defValue: Int = 0, isEncrypt: Boolean=false) :ReadWriteProperty<Any, Int> {
     return if (isEncrypt) {
         //入参、返回值与形参一致的函数，可以用方法引用的方式作为实参传入。
@@ -113,12 +124,18 @@ fun Editor.putEncryptInt(key: String, value: Int):Editor {
     return this
 }
 
+/**
+ * 扩展加密获取
+ */
 fun SharedPreferences.getEncryptLong(key: String, defValue: Long): Long {
     val encryptValue = this.getString(encryptPreference(key), null)
             ?: return defValue
     return java.lang.Long.parseLong(decryptPreference(encryptValue))
 }
 
+/**
+ * 扩展加密保存
+ */
 fun Editor.putEncryptLong(key: String, value: Long): Editor {
     this.putString(encryptPreference(key), encryptPreference(java.lang.Long.toString(value)))
     return this

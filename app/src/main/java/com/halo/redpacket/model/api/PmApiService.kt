@@ -11,7 +11,7 @@ interface PmApiService {
         val API_BASE_SERVER_URL = "http://www.pm25.in/"
     }
 
-    @GET("http://www.pm25.in/querys/pm2_5.json")
+    @GET("http://www.pm25.in/api/querys/pm2_5.json")
     fun pm25(@Query("city") cityId: String, @Query("token") token: String): Maybe<List<PM25Model>>
 
     @GET("http://www.pm25.in/api/querys/so2.json")

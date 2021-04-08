@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_sign_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="start"
+            style="@style/TextStyle.Title"
+            android:text="代签原因"
+            />
+
+        <RadioGroup
+            android:id="@+id/rg_sign_reason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_sign_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/dp10"
+            >
+
+            <RadioButton
+                android:id="@+id/rb_no_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/RadioButtonStyle"
+                android:text="老党员没有智能手机"/>
+
+            <RadioButton
+                android:id="@+id/rb_phone_fault"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/RadioButtonStyle"
+                android:text="手机或系统故障"/>
+
+            <RadioButton
+                android:id="@+id/rb_other"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/RadioButtonStyle"
+                android:text="其他"/>
+
+            <EditText
+                android:id="@+id/et_reason_other"
+                style="@style/EditTextStyle"
+                android:maxLength="20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </RadioGroup>
+
+        
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/rg_sign_reason"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/dp10"
+            >
+
+            <TextView
+                android:id="@+id/tv_sign_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/TextStyle.Content"
+                android:text="@string/cancel"
+                />
+
+            <TextView
+                android:id="@+id/tv_sign_confirm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/TextStyle.Content"
+                android:text="@string/confirm"
+                />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

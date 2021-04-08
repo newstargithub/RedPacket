@@ -7,6 +7,7 @@ class CoroutineDemo {
 
 fun main(args: Array<String>) {
     //delay() 是最常见的挂起函数，类似于线程的 sleep() 函数。但 delay() 并不会阻塞线程。
+    println("——delay—————————————")
     runBlocking {
         println("1: current thread is ${Thread.currentThread().name}")
         GlobalScope.launch {
@@ -20,6 +21,7 @@ fun main(args: Array<String>) {
     }
 
     //yield() 用于挂起当前的协程，将当前的协程分发到 CoroutineDispatcher 的队列，等其他协程的完成/挂起之后，再继续执行先前的协程。
+    println("——yield—————————————")
     runBlocking {
         var job1 = launch {
             println(1)
@@ -48,6 +50,7 @@ fun main(args: Array<String>) {
         IO 适用于 I/O 密集型的操作的线程池。
         Unconfined 表示在被调用的线程中启动协程，直到程序运行到第一个挂起点，协程会在相应的挂起函数所使用的任何线程中恢复。
      */
+    println("——Dispatchers—————————————")
     GlobalScope.launch {
         //withContext 不会创建新的协程。 withContext 类似于 runBlocking，它的最后一行的值即为 withContext 的返回值：
         val result1 = withContext(Dispatchers.Default) {

@@ -1,9 +1,10 @@
-package com.halo.redpacket.model.interceptor
+package com.halo.redpacket.model.rx
 
 import android.accounts.NetworkErrorException
 import android.content.Context
 import com.halo.redpacket.R
 import com.halo.redpacket.model.bean.FailedEvent
+import com.halo.redpacket.model.interceptor.LogManager
 import com.halo.redpacket.util.AppUtils
 import com.halo.redpacket.util.RxBus
 import io.reactivex.observers.ResourceCompletableObserver

@@ -11,19 +11,19 @@ import android.util.Log
 fun init() {
     LogManager.logProxy(object : LogProxy {
         override fun e(tag: String, msg: String) {
-            Log.e(tag,msg)
+            Log.e(tag, msg)
         }
 
         override fun w(tag: String, msg: String) {
-            Log.w(tag,msg)
+            Log.w(tag, msg)
         }
 
         override fun i(tag: String, msg: String) {
-            Log.i(tag,msg)
+            Log.i(tag, msg)
         }
 
         override fun d(tag: String, msg: String?) {
-            TODO("Not yet implemented")
+            Log.d(tag, msg)
         }
     })
 }

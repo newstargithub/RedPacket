@@ -12,6 +12,10 @@ import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
+/**
+ * MaybeObserver封装基类
+ * 重写了 onError 方法用于处理各种网络异常。出现异常时，使用 RxBus 将业务异常信息按照合理的方式给用户进行提示。
+ */
 abstract class BaseMaybeObserver<T> : DisposableMaybeObserver<T>() {
 
     internal val mAppContext: Context

@@ -220,6 +220,7 @@ public final class ResUtils {
 
     /**
      * Check if layout direction is RTL
+     * 从右到左布局
      *
      * @return {@code true} if the layout direction is right-to-left
      */
