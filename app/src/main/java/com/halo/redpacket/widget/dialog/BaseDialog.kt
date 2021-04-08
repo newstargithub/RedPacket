@@ -14,7 +14,7 @@ open class BaseDialog(context: Context, theme: Int, private val mContentView: Vi
 
     constructor(context: Context, contentView: View) : this(context, R.style.XUIDialog_Custom, contentView)
 
-    constructor(context: Context, theme: Int, layoutId: Int) : this(context, R.style.XUIDialog_Custom, LayoutInflater.from(context).inflate(layoutId, null))
+    constructor(context: Context, theme: Int?, layoutId: Int) : this(context, theme ?: R.style.XUIDialog_Custom, LayoutInflater.from(context).inflate(layoutId, null))
 
     init {
         this.setContentView(mContentView)

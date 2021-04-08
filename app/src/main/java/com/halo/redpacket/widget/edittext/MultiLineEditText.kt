@@ -87,6 +87,11 @@ class MultiLineEditText @JvmOverloads constructor(context: Context, attrs: Attri
      */
     private var mIsShowSurplusNumber = true
 
+    init {
+        initAttrs(context, attrs, defStyleAttr)
+        initView()
+    }
+
     /**
      * 初始化属性
      *
@@ -338,8 +343,5 @@ class MultiLineEditText @JvmOverloads constructor(context: Context, attrs: Attri
         return !TextUtils.isEmpty(getContentText())
     }
 
-    init {
-        initAttrs(context, attrs, defStyleAttr)
-        initView()
-    }
+
 }

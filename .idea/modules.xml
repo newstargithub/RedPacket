@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RedPacket.iml" filepath="$PROJECT_DIR$/RedPacket.iml" group="RedPacket" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="RedPacket/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RedPacket.iml" filepath="$PROJECT_DIR$/.idea/modules/RedPacket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/RedPacket.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/RedPacket.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/RedPacket.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/RedPacket.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/haoj/RedPacket.haoj.iml" filepath="$PROJECT_DIR$/.idea/modules/haoj/RedPacket.haoj.iml" />
     </modules>
   </component>
 </project>

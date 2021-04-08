@@ -15,8 +15,8 @@ import kotlinx.android.synthetic.main.xui_layout_loading_view.*
  * @author xuexiang
  * @since 2019/1/14 下午10:08
  */
-class LoadingDialog(context: Context, @StyleRes themeResId: Int,
-                    private val tipMessage: String?) : BaseDialog(context, themeResId, R.layout.xui_dialog_loading) {
+class LoadingDialog(context: Context, @StyleRes themeResId: Int? = null,
+                    private val tipMessage: String? = null) : BaseDialog(context, themeResId, R.layout.xui_dialog_loading) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +24,7 @@ class LoadingDialog(context: Context, @StyleRes themeResId: Int,
     }
 
     fun initView(tipMessage: String? = getString(R.string.xui_tip_loading_message)) {
-        updateMessage(tipMessage)
+        setLoadingMsg(tipMessage)
         setCancelable(false)
         setCanceledOnTouchOutside(false)
     }
@@ -35,7 +35,7 @@ class LoadingDialog(context: Context, @StyleRes themeResId: Int,
      * @param tipMessage
      * @return
      */
-    fun updateMessage(tipMessage: String?) {
+    fun setLoadingMsg(tipMessage: String?) {
         if (TextUtils.isEmpty(tipMessage)) {
             tv_tip_message.text = null
             tv_tip_message.gone()
@@ -45,8 +45,8 @@ class LoadingDialog(context: Context, @StyleRes themeResId: Int,
         }
     }
 
-    fun updateMessage(resId: Int) {
-        updateMessage(getString(resId))
+    fun setLoadingMsg(resId: Int) {
+        setLoadingMsg(getString(resId))
     }
 
     fun isLoading(): Boolean {

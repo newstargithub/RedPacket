@@ -44,7 +44,13 @@ data class User(var username: String? = null,
                 var address: Address? = null
 )
 
-data class Address(var street: String)
+data class Address(var street: String? = null){
+
+    var province: String?=null
+    var city: String?=null
+
+    override fun toString() = "province=$province,city=$city,street=$street"
+}
 
 /**
  * 嵌套类是指定义在某一个类内部的类，

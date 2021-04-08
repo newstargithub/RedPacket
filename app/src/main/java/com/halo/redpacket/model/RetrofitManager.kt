@@ -22,12 +22,12 @@ class RetrofitManager private constructor(){
 
         //对 OkHttp 进行配置
         val builder = OkHttpClient.Builder()
-                //设置拦截器
+                //设置日志拦截器
                 .addInterceptor(logInterceptor)
                 //设置超时
-                .connectTimeout(6000, TimeUnit.MICROSECONDS)
-                .readTimeout(6000, TimeUnit.MICROSECONDS)
-                .writeTimeout(6000, TimeUnit.MICROSECONDS)
+                .writeTimeout((30 * 1000).toLong(), TimeUnit.MILLISECONDS)
+                .readTimeout((20 * 1000).toLong(), TimeUnit.MILLISECONDS)
+                .connectTimeout((15 * 1000).toLong(), TimeUnit.MILLISECONDS)
 
         okhttpClient = builder.build()
 
@@ -54,6 +54,7 @@ class RetrofitManager private constructor(){
 
     fun okhttpClient(): OkHttpClient = okhttpClient
 
+    //单例
     private object Holder {
         val MANAGER = RetrofitManager()
     }

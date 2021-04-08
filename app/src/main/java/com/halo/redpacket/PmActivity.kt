@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.halo.redpacket.extend.errorReturn
 import com.halo.redpacket.inject.DaggerUserComponent2
 import com.halo.redpacket.inject.IService
 import com.halo.redpacket.inject.UserInject
@@ -20,6 +21,10 @@ import io.reactivex.functions.BiFunction
 import kotlinx.android.synthetic.main.activity_pm.*
 import javax.inject.Inject
 
+/**
+ * 天气质量
+ * zip合并多个网络请求
+ */
 class PmActivity : AppCompatActivity() {
 
     @Inject
@@ -33,7 +38,7 @@ class PmActivity : AppCompatActivity() {
         setContentView(R.layout.activity_pm)
         initData()
 
-        DaggerUserComponent2.create().inject(this)
+        /*DaggerUserComponent2.create().inject(this)
         button.setOnClickListener {
 //          DaggerUserComponent2.builder().build().inject(this)
             Toast.makeText(this, user.testModule(), Toast.LENGTH_LONG).show()
@@ -43,14 +48,14 @@ class PmActivity : AppCompatActivity() {
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
 //            Toast.makeText(this, service.foo(), Toast.LENGTH_LONG).show()
-        }
+        }*/
     }
 
     private fun initData() {
-        val pmService = RetrofitManager.get().pmService()
+        val apiService = RetrofitManager.get().pmService()
 
-        val pm25Maybe = pmService.pm25(Constant.CITY_ID, Constant.TOKEN)
-                .compose(RxJavaUtils.maybeToMain())
+        val pm25Maybe = apiService.pm25(Constant.CITY_ID, Constant.TOKEN)
+                .compose(RxJavaUtils.maybeToMain<List<PM25Model>>())
                 .filter { it ->
                     Preconditions.isNotBlank(it)
                 }.flatMap { pm25Models ->
@@ -59,14 +64,11 @@ class PmActivity : AppCompatActivity() {
                             return@flatMap Maybe.just(model)
                         }
                     }
-                    return@flatMap Maybe.empty<PM25Model>()
-                }.onErrorReturn {
-                    //由于每小时token请求数的限制，可能会导致接口不返回数据。如果不返回数据，则使用默认的PM25Model
-                    PM25Model()
-                }
+                    Maybe.empty<PM25Model>()
+                }.errorReturn(PM25Model()) //由于每小时token请求数的限制，可能会导致接口不返回数据。如果不返回数据，则使用默认的PM25Model
 
-        val so2Maybe = pmService.so2(Constant.CITY_ID, Constant.TOKEN)
-                .compose(RxJavaUtils.maybeToMain())
+        val so2Maybe = apiService.so2(Constant.CITY_ID, Constant.TOKEN)
+                .compose(RxJavaUtils.maybeToMain<List<SO2Model>>())
                 .filter { it ->
                     Preconditions.isNotBlank(it)
                 }.flatMap { so2Models ->
@@ -75,16 +77,16 @@ class PmActivity : AppCompatActivity() {
                             return@flatMap Maybe.just(model)
                         }
                     }
-                    return@flatMap Maybe.empty<SO2Model>()
-                }.onErrorReturnItem(SO2Model())
+                    Maybe.empty<SO2Model>()
+                }.errorReturn(SO2Model())
 
         // 合并多个网络请求
         val subscribe = Maybe.zip(pm25Maybe, so2Maybe, BiFunction<PM25Model, SO2Model, ZipObject> { pm25Model, so2Model ->
-            return@BiFunction ZipObject(pm25Model.quality,
-                    pm25Model.pm2_5,
-                    pm25Model.pm2_5_24h,
-                    so2Model.so2,
-                    so2Model.so2_24h)
+            ZipObject(pm25Model.quality,
+                pm25Model.pm2_5,
+                pm25Model.pm2_5_24h,
+                so2Model.so2,
+                so2Model.so2_24h)
         }).subscribe({
             quality.setText("空气质量指数：" + it.pm2_5_quality)        // 如果为空，表示使用了默认值
             pm2_5.setText("PM2.5 1小时内平均：" + it.pm2_5)             // 如果为0，表示使用了默认值

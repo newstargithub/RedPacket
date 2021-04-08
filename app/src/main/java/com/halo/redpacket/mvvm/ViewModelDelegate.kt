@@ -41,14 +41,16 @@ class ViewModelDelegate<out T : BaseViewModel>(private var clazz: KClass<T>, pri
 }
 
 /**
- * 扩展方法
+ * BaseActivity扩展方法
  */
 fun <T : BaseViewModel> BaseActivity.viewModelDelegate(clazz: KClass<T>, factory: ViewModelProvider.Factory? = null)
         = ViewModelDelegate<T>(clazz, factory,true)
 
 /**
- *
+ * BaseFragment扩展方法
  * @param fromActivity 默认为true，viewModel生命周期默认跟activity相同 by aaron 2018/7/24
  */
 fun <T : BaseViewModel> BaseFragment.viewModelDelegate(clazz: KClass<T>, factory: ViewModelProvider.Factory? = null, fromActivity: Boolean = true)
         = ViewModelDelegate<T>(clazz, factory,fromActivity)
+
+

@@ -48,7 +48,7 @@ class CityPickerDialogFragment: DialogFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        mContentView = inflater.inflate(R.layout.cp_dialog_city_picker, container, false)
+//        mContentView = inflater.inflate(R.layout.cp_dialog_city_picker, container, false)
         return mContentView
     }
 
